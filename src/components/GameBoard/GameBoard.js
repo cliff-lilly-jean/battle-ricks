@@ -22,7 +22,7 @@ function GameBoard() {
  return (
   <div>
    {data.characters.results.map(character => {
-    return <div className="card">
+    return <div className="card" key={character.id}>
      <img src={character.image} alt="" />
      <h2>{character.name}</h2>
     </div>;
