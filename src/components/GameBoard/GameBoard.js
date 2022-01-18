@@ -1,13 +1,19 @@
 import React from 'react';
+import Card from '../Card/Card';
 // REACT QUERY
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { RICK_AND_MORTY_CHARACTERS } from '../../graphql/Queries';
+
+// CSS
+import './GameBoard.css';
 
 
 function GameBoard() {
 
  // set the characters
  const { loading, error, data } = useQuery(RICK_AND_MORTY_CHARACTERS);
+
+ console.log(data.characters.results);
 
  // pull the data from the API
  if (loading) {
@@ -17,15 +23,10 @@ function GameBoard() {
  if (error) {
   return <h1>Something went wrong</h1>;
  }
-
- console.log(error, data, loading);
  return (
-  <div>
+  <div className='game-board'>
    {data.characters.results.map(character => {
-    return <div className="card" key={character.id}>
-     <img src={character.image} alt="" />
-     <h2>{character.name}</h2>
-    </div>;
+    return <Card id={character.id} image={character.image} name={character.name} species={character.species} status={character.status} gender={character.gender} location={character.location.name} />;
    })}
   </div>
  );
