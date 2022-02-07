@@ -1,7 +1,10 @@
 import React from 'react';
 
-function Player() {
- return <div></div>;
+function Player({ playerType }) {
+
+ return <div className='player'>
+  {playerType}
+ </div>;
 }
 
 export default Player;
