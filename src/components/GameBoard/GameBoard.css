@@ -1,7 +1,11 @@
 .game-board {
+ @apply h-screen
+}
+
+.game-board__container {
  display: grid;
  gap: 2rem;
- grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
  justify-self: center;
  align-items: center;
 
