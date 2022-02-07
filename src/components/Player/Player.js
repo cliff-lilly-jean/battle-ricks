@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Deck() {
+function Player() {
  return <div></div>;
 }
 
-export default Deck;
+export default Player;
