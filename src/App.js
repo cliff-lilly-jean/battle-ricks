@@ -2,7 +2,7 @@
 import './App.css';
 
 // COMPONENTS
-import Gameboard from './components/Gameboard/Gameboard';
+import Game from './components/Game/Game';
 
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
  return (
   <div className="App bg-[#f8f8f8] h-screen">
    {/* Full width full height game board that holds the decks, hands and scoreboard */}
-   <Gameboard />
+   <Game />
   </div>
  );
 }
