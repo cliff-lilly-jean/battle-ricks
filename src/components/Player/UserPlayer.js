@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Player from './Player';
 
-const User = () => {
+const UserPlayer = () => {
 
  // State
  let [userPlayer, setUserPlayer] = useState('');
@@ -22,4 +22,4 @@ const User = () => {
  </div>;
 };
 
-export default User;
+export default UserPlayer;
