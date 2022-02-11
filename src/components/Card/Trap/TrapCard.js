@@ -2,8 +2,9 @@ import React from 'react';
 
 function TrapCard() {
 
- // Import base card
- // Create a traps obj
+ /*
+  - springTrap()
+ */
 
  return <div></div>;
 }
