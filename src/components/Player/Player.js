@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Deck from '../Deck/Deck';
 
 function Player({ playerType }) {
 
- // Create an HP (Health point) stat
- let hp = 2000;
- // Import the Deck
+ // Health Point stat
+ const [hp, setHp] = useState(2000);
+
+ // Update the HP based off a card's ATK or DEF stats
+ updateHp = (damageDealt) => {
+  /*
+   - damageDelt equals Atk - Def or
+   - damageDelt equals Atk - Atk
+   - setHp to the currentHp - damageDelt
+  */
+ };
 
 
  return <div className='player'>
