@@ -6,6 +6,9 @@ function Player({ playerType }) {
  // Health Point stat
  const [hp, setHp] = useState(2000);
 
+ // A player's deck
+ const [deck, setDeck] = useState(Deck);
+
  // Update the HP based off a card's ATK or DEF stats
  updateHp = (damageDealt) => {
   /*

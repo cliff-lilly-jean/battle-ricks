@@ -1,6 +1,10 @@
 import React from 'react';
+import Card from '../Card/Card';
 
 function Deck() {
+
+ //
+
  /*
   - dealCard()
      - Deals one card from the deck and returns it.
@@ -16,7 +20,10 @@ function Deck() {
      Return the number of cards left in the deck.
  */
 
- return <div></div>;
+ return <div>
+  {/* TODO: Loop through an array for cards to create the Deck */}
+  <Card />
+ </div>;
 }
 
 export default Deck;
