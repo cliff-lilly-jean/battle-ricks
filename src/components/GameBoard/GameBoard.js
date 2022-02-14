@@ -1,5 +1,6 @@
 import React from 'react';
 import ComputerPlayer from '../Player/ComputerPlayer';
+import Player from '../Player/Player';
 import UserPlayer from '../Player/UserPlayer';
 import Zone from '../Zone/Zone';
 
@@ -23,6 +24,8 @@ function GameBoard() {
   {/* TODO: Create a computer field */}
   <Zone />
   {/* Computer Player */}
+  <Player />
+  <p>Space</p>
   <ComputerPlayer />
   {/* User Player */}
   {/* TODO: Create a user field */}

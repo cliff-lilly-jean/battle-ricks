@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from '../Card/Card';
 
 function Deck() {
 
- //
+ // A player's cards
+ const [card, setCards] = useState(['card1', 'card2', 'card3']);
+ console.log(card);
 
  /*
   - dealCard()
@@ -22,6 +24,7 @@ function Deck() {
 
  return <div>
   {/* TODO: Loop through an array for cards to create the Deck */}
+  <p>I'm the Deck</p>
   <Card />
  </div>;
 }

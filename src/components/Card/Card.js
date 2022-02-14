@@ -3,14 +3,14 @@ import React, { useState } from 'react';
 function Card({ typeOfCard, nameOfCard }) {
 
  // Current state/position of card
- const [cardPosition, setCardPosition] = useState();
- const [defensePosition, setDefensePosition] = useState(false);
- const [attackPosition, setAttackPosition] = useState(false);
- const [destroyed, setDestroyed] = useState(false);
- const [faceDown, setFaceDown] = useState(true);
+ let [cardPosition, setCardPosition] = useState();
+ let [defensePosition, setDefensePosition] = useState(false);
+ let [attackPosition, setAttackPosition] = useState(false);
+ let [destroyed, setDestroyed] = useState(false);
+ let [faceDown, setFaceDown] = useState(true);
 
  // All the states a card can be in
- cardState = {
+ cardPosition = {
   'defensePosition': () => {
    setDefensePosition(true);
    setAttackPosition(false);
@@ -35,12 +35,13 @@ function Card({ typeOfCard, nameOfCard }) {
 
  // Update the card mode
  let updateCardMode = (mode) => {
-  setCardPosition(mode);
+  setFaceDown(mode);
  };
 
 
-
- return <div></div>;
+ return <div>
+  <h1>I'm the Card for</h1>
+ </div>;
 }
 
 export default Card;

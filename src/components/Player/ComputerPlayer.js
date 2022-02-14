@@ -21,6 +21,7 @@ const ComputerPlayer = () => {
  useEffect(() => {
   addNewComputerPlayer();
  }, []);
+
  return <div>
   <Player playerType={computerPlayer} />
  </div>;

@@ -4,13 +4,14 @@ import Deck from '../Deck/Deck';
 function Player({ playerType }) {
 
  // Health Point stat
- const [hp, setHp] = useState(2000);
+ let [hp, setHp] = useState(2000);
 
  // A player's deck
- const [deck, setDeck] = useState(Deck);
+ let [deck, setDeck] = useState(<Deck />);
+ console.log(deck);
 
  // Update the HP based off a card's ATK or DEF stats
- updateHp = (damageDealt) => {
+ const updateHp = (damageDealt) => {
   /*
    - damageDelt equals Atk - Def or
    - damageDelt equals Atk - Atk
@@ -22,6 +23,7 @@ function Player({ playerType }) {
  return <div className='player'>
   <h1>{playerType}</h1>
   <span className='hp'>{hp}</span>
+  <span>{deck}</span>
  </div>;
 }
 
