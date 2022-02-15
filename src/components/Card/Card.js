@@ -38,6 +38,9 @@ function Card({ typeOfCard, nameOfCard }) {
   setFaceDown(mode);
  };
 
+ /* TODO:
+  - Get the data for one card from the API
+ */
 
  return <div>
   <h1>I'm the Card for</h1>
