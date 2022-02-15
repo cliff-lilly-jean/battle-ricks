@@ -43,7 +43,7 @@ function Card({ typeOfCard, nameOfCard }) {
  */
 
  return <div>
-  <h1>I'm the Card for</h1>
+  <h1>I'm the Card</h1>
  </div>;
 }
 
