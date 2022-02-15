@@ -4,8 +4,8 @@ import Card from '../Card/Card';
 function Deck() {
 
  // A player's cards
- const [card, setCards] = useState([]);
- console.log(card);
+ const [usersCards, setUsersCards] = useState(['Morty', 'Rick']);
+ const [computersCards, setComputersCards] = useState([]);
 
  /*
   - dealCard()
@@ -32,9 +32,9 @@ function Deck() {
        - Return cards.length
  */
 
- return <div>
-  <p>I'm the Deck</p>
-  <Card />
+ return <div className='deck-container'>
+  <p>{usersCards}</p>
+  <p>{computersCards}</p>
  </div>;
 }
 

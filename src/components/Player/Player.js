@@ -7,7 +7,7 @@ function Player({ playerType }) {
  let [hp, setHp] = useState(2000);
 
  // A player's deck
- let [deck, setDeck] = useState(<Deck />);
+ let [deck, setDeck] = useState([]);
  console.log(deck);
 
  // Update the HP based off a card's ATK or DEF stats
@@ -20,10 +20,10 @@ function Player({ playerType }) {
  };
 
 
- return <div className='player'>
-  <h1>{playerType}</h1>
-  <span className='hp'>{hp}</span>
-  <span>{deck}</span>
+ return <div className="player w-80 bg-slate-500 p-5 rounded-lg text-orange-300">
+  <h1 className='player__name'>{playerType}</h1>
+  <span className='player__hp'>{hp}</span>
+  <Deck />
  </div>;
 }
 

@@ -20,13 +20,8 @@ function GameBoard() {
      - top row for monster cards
  */
 
- return <div className="gameboard flex items-center justify-between p-8">
-  {/* TODO: Create a computer field */}
-  <Zone />
-  {/* Computer Player */}
+ return <div className="gameboard flex items-center justify-between flex-col p-8 w-3/4 m-auto h-full">
   <ComputerPlayer />
-  {/* User Player */}
-  {/* TODO: Create a user field */}
   <UserPlayer />
  </div>;
 }

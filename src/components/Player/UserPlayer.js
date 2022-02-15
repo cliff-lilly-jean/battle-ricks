@@ -5,6 +5,7 @@ const UserPlayer = () => {
 
  // State
  let [userPlayer, setUserPlayer] = useState('');
+ let [userDeck, setUserDeck] = useState();
 
  // Methods
  let addNewUserPlayer = () => {
