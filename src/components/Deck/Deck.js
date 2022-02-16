@@ -4,20 +4,7 @@ import Card from '../Card/Card';
 function Deck({ playerDeck }) {
 
  /*
-  - dealCard()
-     * Deals one card from the deck and returns it.
-       - Create two new Decks
-       - Pop the first card off
-       - Push it to a Deck1
-       - Pop the first card off
-       - Push it to Deck2
-       - Repeat until cardsLeft() equals 10
 
-  - shuffle()
-     * Put the cards in the deck and shuffle them randomly.
-       - Pull the data from the API for the cards
-       - Use the card state to add 50 cards to the deck
-       - Shuffle the cards
 
   - drawCard()
      * Pulls one card from the deck and returns it.

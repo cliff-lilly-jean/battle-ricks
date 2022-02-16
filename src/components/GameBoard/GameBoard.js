@@ -6,7 +6,7 @@ function GameBoard() {
 
  const [gameOver, setGameOver] = useState(true);
  const [winner, setWinner] = useState('');
- const [gameDeck, setGameDeck] = useState();
+ const [gameDeck, setGameDeck] = useState([]);
  const [usersDeck, setUsersDeck] = useState(['Rick ', 'Morty']);
  const [computersDeck, setComputersDeck] = useState(['Summer ', 'Beth']);
  const [userPlayer, setUserPlayer] = useState('');
@@ -37,19 +37,22 @@ function GameBoard() {
   addNewComputerPlayer();
  }, []);
 
- /* Create the game rules
-     - Each player is given 20 cards (5 in Hand and 15 in Deck)
-     - Every turn a player can put a card down on the gameboard in it's designated section (Spell cards in spell section etc.)
-     - Monster cards can be placed face down in DEF position
-     - Monster cards can be placed face up in attack position
- */
- /* Create the grid
-     - 6 x 2 grid
-     - bottom right for deck
-     - top right for grave yard
-     - bottom row for spell cards
-     - top row for monster cards
- */
+ /*
+ - dealCard()
+ * Deals one card from the deck and returns it.
+   - Create two new Decks
+   - Pop the first card off
+   - Push it to a Deck1
+   - Pop the first card off
+   - Push it to Deck2
+   - Repeat until cardsLeft() equals 10
+
+- shuffle()
+ * Put the cards in the deck and shuffle them randomly.
+   - Pull the data from the API for the cards
+   - Use the card state to add 50 cards to the deck
+   - Shuffle the cards
+*/
 
  return <div className="gameboard flex items-center justify-between flex-col p-8 w-3/4 m-auto h-full">
   <Player playerType={computerPlayer} playerDeck={computersDeck} />
