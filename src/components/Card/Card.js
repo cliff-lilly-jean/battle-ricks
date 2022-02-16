@@ -2,12 +2,17 @@ import React, { useState } from 'react';
 
 function Card({ typeOfCard, nameOfCard }) {
 
- // Current state/position of card
- let [cardPosition, setCardPosition] = useState();
+ // * Properties of a Card
  let [defensePosition, setDefensePosition] = useState(false);
  let [attackPosition, setAttackPosition] = useState(false);
  let [destroyed, setDestroyed] = useState(false);
  let [faceDown, setFaceDown] = useState(true);
+ // Name
+ // HP
+ // ATK
+ // DEF
+ // Image
+ // Card type
 
  // All the states a card can be in
  cardPosition = {
@@ -28,19 +33,14 @@ function Card({ typeOfCard, nameOfCard }) {
   },
  };
 
- // Update the card state
+ // * Methods of a Card
  let updateCardPosition = (position) => {
   setCardPosition(position);
  };
 
- // Update the card mode
  let updateCardMode = (mode) => {
   setFaceDown(mode);
  };
-
- /* TODO:
-  - Get the data for one card from the API
- */
 
  return <div>
   <h1>I'm the Card</h1>

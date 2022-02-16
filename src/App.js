@@ -2,15 +2,14 @@
 import './App.css';
 
 // COMPONENTS
-import Game from './components/Game/Game';
+import Gameboard from './components/Gameboard/GameBoard';
 
 
 function App() {
 
  return (
   <div className="App bg-[#f8f8f8] h-screen">
-   {/* Full width full height game board that holds the decks, hands and scoreboard */}
-   <Game />
+   <Gameboard />
   </div>
  );
 }

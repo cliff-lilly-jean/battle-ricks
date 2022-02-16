@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Card from '../Card/Card';
 
-function Deck() {
+function Deck({ dealCard, shuffle, drawCard, cardsLeft }) {
 
  // A player's cards
- const [usersCards, setUsersCards] = useState(['Morty', 'Rick']);
+ const [usersCards, setUsersCards] = useState([]);
  const [computersCards, setComputersCards] = useState([]);
 
  /*
@@ -32,9 +32,11 @@ function Deck() {
        - Return cards.length
  */
 
+
+
  return <div className='deck-container'>
-  <p>{usersCards}</p>
-  <p>{computersCards}</p>
+  <p >{usersCards}</p>
+  <p >{computersCards}</p>
  </div>;
 }
 

@@ -1,10 +1,41 @@
-import React from 'react';
-import ComputerPlayer from '../Player/ComputerPlayer';
+import React, { useState, useEffect } from 'react';
 import Player from '../Player/Player';
-import UserPlayer from '../Player/UserPlayer';
-import Zone from '../Zone/Zone';
+import computerPlayerNames from '../../data/ComputerPlayerNames.json';
 
 function GameBoard() {
+
+ const [gameOver, setGameOver] = useState(true);
+ const [winner, setWinner] = useState('');
+ const [gameDeck, setGameDeck] = useState();
+ const [usersDeck, setUsersDeck] = useState([]);
+ const [computersDeck, setComputersDeck] = useState([]);
+ const [userPlayer, setUserPlayer] = useState('');
+ const [computerPlayer, setComputerPlayer] = useState('');
+ const [turn, setTurn] = useState('');
+
+ // Add a new userPlayer on game load
+ let addNewUserPlayer = () => {
+  let newPlayer = prompt();
+  setUserPlayer(newPlayer);
+ };
+
+ useEffect(() => {
+  addNewUserPlayer();
+ }, []);
+
+ // Add a new computerPlayer on game load
+ let addNewComputerPlayer = () => {
+  let computerPlayerValues = computerPlayerNames;
+  setComputerPlayer(computerPlayerValues[Math.floor(Math.random() * getComputerPlayerNamesLength())]);
+ };
+
+ let getComputerPlayerNamesLength = () => {
+  return computerPlayerNames.length - 1;
+ };
+
+ useEffect(() => {
+  addNewComputerPlayer();
+ }, []);
 
  /* Create the game rules
      - Each player is given 20 cards (5 in Hand and 15 in Deck)
@@ -21,8 +52,8 @@ function GameBoard() {
  */
 
  return <div className="gameboard flex items-center justify-between flex-col p-8 w-3/4 m-auto h-full">
-  <ComputerPlayer />
-  <UserPlayer />
+  <Player playerType={computerPlayer} />
+  <Player playerType={userPlayer} />
  </div>;
 }
 
