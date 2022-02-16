@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import Card from '../Card/Card';
 
-function Deck({ dealCard, shuffle, drawCard, cardsLeft }) {
-
- // A player's cards
- const [usersCards, setUsersCards] = useState([]);
- const [computersCards, setComputersCards] = useState([]);
+function Deck({ playerDeck }) {
 
  /*
   - dealCard()
@@ -35,8 +31,7 @@ function Deck({ dealCard, shuffle, drawCard, cardsLeft }) {
 
 
  return <div className='deck-container'>
-  <p >{usersCards}</p>
-  <p >{computersCards}</p>
+  <Card playerDeck={playerDeck} />
  </div>;
 }
 

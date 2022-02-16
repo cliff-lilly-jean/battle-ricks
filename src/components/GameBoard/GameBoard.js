@@ -7,8 +7,8 @@ function GameBoard() {
  const [gameOver, setGameOver] = useState(true);
  const [winner, setWinner] = useState('');
  const [gameDeck, setGameDeck] = useState();
- const [usersDeck, setUsersDeck] = useState([]);
- const [computersDeck, setComputersDeck] = useState([]);
+ const [usersDeck, setUsersDeck] = useState(['Rick ', 'Morty']);
+ const [computersDeck, setComputersDeck] = useState(['Summer ', 'Beth']);
  const [userPlayer, setUserPlayer] = useState('');
  const [computerPlayer, setComputerPlayer] = useState('');
  const [turn, setTurn] = useState('');
@@ -52,8 +52,8 @@ function GameBoard() {
  */
 
  return <div className="gameboard flex items-center justify-between flex-col p-8 w-3/4 m-auto h-full">
-  <Player playerType={computerPlayer} />
-  <Player playerType={userPlayer} />
+  <Player playerType={computerPlayer} playerDeck={computersDeck} />
+  <Player playerType={userPlayer} playerDeck={usersDeck} />
  </div>;
 }
 
