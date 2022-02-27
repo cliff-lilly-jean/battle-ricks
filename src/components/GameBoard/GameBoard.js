@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Player from '../Player/Player';
 import Button from '../Button/Button';
 
-// test
-import PlayerCreation from './PlayerCreation';
-// import cpuPlayerNames from '../../data/cpuPlayerNames.json';
-import axios from 'axios';
+import getPlayers from './GetPlayers';
+import getDeck from '../Deck/GetDeck';
+
 
 function GameBoard() {
 
@@ -14,72 +13,16 @@ function GameBoard() {
  const [winner, setWinner] = useState('');
  const [gameDeck, setGameDeck] = useState([]);
  const [turn, setTurn] = useState('');
- const [charactersPageList, setCharactersPageList] = useState([]);
- const [randomCharacter, setRandomCharacter] = useState(() => Math.floor(Math.random() * 20));
- const [randomPage, setRandomPage] = useState();
 
 
- const { cpuPlayer, userPlayer } = PlayerCreation();
+ const { cpuPlayer, userPlayer } = getPlayers();
+ const { getNewDeck, randomCharacters } = getDeck();
 
  // User properties
  const [usersDeck, setUsersDeck] = useState(['Rick ', 'Morty']);
- // const [userPlayer, setUserPlayer] = useState('');
 
  // CPU properties
  const [cpusDeck, setCpusDeck] = useState(['Summer ', 'Beth']);
- // const [cpuPlayer, setCpuPlayer] = useState('');
-
-
- // // Randomly choose a character from the  API
- let updateCharacterRandomly = () => {
-  let num = Math.floor(Math.random() * 42) + 1;
-  setRandomCharacter(() => Math.floor(Math.random() * 42) + 1);
- };
-
- // Rerender only if the charactersPageList is updated
- // useEffect(() => {
- //  setRandomCharacter(() => Math.floor(Math.random() * 20));
- // }, []);
-
- // Get a random character page
- const getAPIData = async () => {
-  // Declare a variable to hold the API url string
-  let apiUrl = 'https://rickandmortyapi.com/api/character/?page=';
-
-  // Sn array to hold the URL endpoints
-  let urlEndpoints = [];
-
-  // An array to hold all the random character numbers
-  let randomCharacterArr = [];
-
-  // Loop through and add the data to the arrays
-  for (let i = 0; i < 40; i++) {
-   urlEndpoints.push(`${apiUrl}${Math.floor(Math.random() * 42) + 1}`);
-   randomCharacterArr.push(Math.floor(Math.random() * 20));
-  }
-
-  // Use the all method on axios to get a new character page for all the endpoints in the urlEndpoints array
-  axios.all(urlEndpoints).then(axios.spread((...allEndPoints) => {
-   allEndPoints.forEach((url, index) => {
-    axios.get(url).then((res) => {
-     let charArrIndex = randomCharacterArr[index];
-     console.log(res.data.results[charArrIndex].name);
-     console.log("Random char number: ", charArrIndex);
-    }).catch(error => {
-     console.log(error);
-    });
-   });
-  })
-  );
- };
-
-
- useEffect(() => {
-  // getAPIData();
-  // setGameDeck();
-  // setCharactersPageList(() => Math.floor(Math.random() * 42) + 1);
-  // console.log(charactersPageList);
- }, []);
 
 
  /*
@@ -112,8 +55,7 @@ function GameBoard() {
 
  return <div className="gameboard flex items-center justify-between flex-col p-8 w-3/4 m-auto h-full">
   <Player playerType={cpuPlayer} playerDeck={cpusDeck} />
-  <Button getAPIData={getAPIData} updateCharacterRandomly={updateCharacterRandomly} />
-  {/* s */}
+  <Button getNewDeck={getNewDeck} />
   <Player playerType={userPlayer} playerDeck={usersDeck} />
  </div>;
 };
