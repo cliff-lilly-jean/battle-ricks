@@ -21,9 +21,10 @@ const GetDeck = () => {
  };
 
  const getRandomCharacterFromUrl = (resObj) => {
-  const randomNumber = Math.floor(Math.random() * 20);
+  const randomNumber = Math.floor(Math.random() * resObj.data.results.length);
 
   const newCharacter = {
+   id: resObj.data.results[randomNumber].id,
    name: resObj.data.results[randomNumber].name,
    status: resObj.data.results[randomNumber].status,
    gender: resObj.data.results[randomNumber].gender,
@@ -38,8 +39,8 @@ const GetDeck = () => {
   setApiUrls(apiUrls => [...apiUrls, getUrl()]);
  };
 
- useEffect(async () => {
-  console.log(deck);
+ useEffect(() => {
+
  }, [deck]);
 
  // Get a new deck fo characters
@@ -49,12 +50,12 @@ const GetDeck = () => {
    addUrlToArr();
   }
 
-  await Promise.all(apiUrls.map(url => axios.get(url).then(res => {
-   getRandomCharacterFromUrl(res);
+  const data = await Promise.all(apiUrls.map(url => axios.get(url).then(res => {
    setDeck(deck => [...deck, getRandomCharacterFromUrl(res)]);
   }).catch(error => {
    console.log(error);
   })));
+  console.log(deck);
  };
 
  return { getNewDeck };
