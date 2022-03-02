@@ -39,7 +39,7 @@ const GetDeck = () => {
  };
 
  useEffect(async () => {
-
+  console.log(deck);
  }, [deck]);
 
  // Get a new deck fo characters
@@ -49,7 +49,7 @@ const GetDeck = () => {
    addUrlToArr();
   }
 
-  Promise.all(apiUrls.map(url => axios.get(url).then(res => {
+  await Promise.all(apiUrls.map(url => axios.get(url).then(res => {
    getRandomCharacterFromUrl(res);
    setDeck(deck => [...deck, getRandomCharacterFromUrl(res)]);
   }).catch(error => {
