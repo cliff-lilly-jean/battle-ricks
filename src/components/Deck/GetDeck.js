@@ -31,6 +31,8 @@ const GetDeck = () => {
    image: resObj.data.results[randomNumber].image,
    location: resObj.data.results[randomNumber].location.name,
    species: resObj.data.results[randomNumber].species,
+   ATK: Math.floor(Math.random() * 3000),
+   DEF: Math.floor(Math.random() * 3000),
   };
   return newCharacter;
  };
@@ -51,14 +53,15 @@ const GetDeck = () => {
   }
 
   const data = await Promise.all(apiUrls.map(url => axios.get(url).then(res => {
-   setDeck(deck => [...deck, getRandomCharacterFromUrl(res)]);
+   return setDeck(deck => [...deck, getRandomCharacterFromUrl(res)]);
   }).catch(error => {
    console.log(error);
   })));
-  console.log(deck);
- };
 
- return { getNewDeck };
+ };
+ console.log(deck);
+
+ return { getNewDeck, deck };
 };
 
 export default GetDeck;

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import cpuPlayerNames from '../../data/cpuPlayerNames.json';
+import cpuPlayerNames from '../../Data/cpuPlayerNames.json';
 
 const PlayerCreation = () => {
  const [userPlayer, setUserPlayer] = useState('');

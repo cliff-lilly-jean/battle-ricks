@@ -16,7 +16,7 @@ function GameBoard() {
 
 
  const { cpuPlayer, userPlayer } = getPlayers();
- const { getNewDeck, randomCharacters } = getDeck();
+ const { getNewDeck, deck } = getDeck();
 
  // User properties
  const [usersDeck, setUsersDeck] = useState(['Rick ', 'Morty']);
@@ -24,6 +24,10 @@ function GameBoard() {
  // CPU properties
  const [cpusDeck, setCpusDeck] = useState(['Summer ', 'Beth']);
 
+
+ useEffect(() => {
+  setGameDeck([...gameDeck, deck]);
+ }, []);
 
  /*
  - startGame()

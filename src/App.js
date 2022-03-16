@@ -2,7 +2,7 @@
 import './App.css';
 
 // COMPONENTS
-import Gameboard from './components/Gameboard/GameBoard';
+import Gameboard from './Components/GameBoard/GameBoard';
 
 
 function App() {
