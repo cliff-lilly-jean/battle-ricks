@@ -1,20 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Card = () => {
 
- // The Card has a name
- // The Card has a type
- // The Card has a species
- // The Card has a status
- // The Card has a image
- // The Card has a gender
- // The Card has a location object that has a name
- // The Card has an ATK
- // The Card has a DEF
+
+ const [name, setName] = useState('');
+ const [type, setType] = useState('');
+ const [species, setSpecies] = useState('');
+ const [status, setStatus] = useState('');
+ const [image, setImage] = useState('');
+ const [gender, setGender] = useState('');
+ const [location, setLocation] = useState('');
+ const [atk, setAtk] = useState('');
+ const [def, setDef] = useState('');
+
+ // Todo: pass this method up to the Deck
+ const createCard = (cardName, cardType, cardSpecies, cardStatus, cardImage, cardGender, cardLocation, cardAtk, cardDef) => {
+  const newCard = {
+   name: setName(cardName),
+   type: setType(cardType),
+   species: setSpecies(cardSpecies),
+   status: setStatus(cardStatus),
+   image: setImage(cardImage),
+   gender: setGender(cardGender),
+   location: setLocation(cardLocation),
+   atk: setAtk(cardAtk),
+   def: setDef(cardDef)
+  };
+
+  return newCard;
+ };
 
  return (
   <div className='card'>
-   {/* card object */}
+   {newCard}
   </div>
  );
 };
