@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react/cjs/react.production.min';
 
 const Card = () => {
 
@@ -12,6 +13,7 @@ const Card = () => {
  const [location, setLocation] = useState('');
  const [atk, setAtk] = useState('');
  const [def, setDef] = useState('');
+ const [cards, setCards] = useState([]);
 
  // Todo: pass this method up to the Deck
  const createCard = (cardName, cardType, cardSpecies, cardStatus, cardImage, cardGender, cardLocation, cardAtk, cardDef) => {
@@ -30,9 +32,13 @@ const Card = () => {
   return newCard;
  };
 
+ useEffect(() => {
+  setCards([...cards, createCard('cliff', 'magic', 'human', 'alive', 'no image', 'M', 'America', 1022, 2000)]);
+ }, []);
+
  return (
   <div className='card'>
-   {newCard}
+   {createCard('cliff', 'magic', 'human', 'alive', 'no image', 'M', 'America', 1022, 2000)}
   </div>
  );
 };
