@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Player from '../Player/Player';
 
-const Board = (startGame, endGame, setWinner) => {
+const Board = (startGame, endGame, winner) => {
 
  // The Board component contains an array, players of Player components.
 
@@ -40,8 +40,8 @@ const Board = (startGame, endGame, setWinner) => {
   console.log(endGame);
  };
 
- const handleWinner = () => {
-
+ const handleWinner = (playerGameWinner) => {
+  winner = playerGameWinner;
  };
 
 
