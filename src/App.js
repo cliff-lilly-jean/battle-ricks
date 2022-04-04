@@ -2,14 +2,14 @@
 import './App.css';
 
 // COMPONENTS
-import Gameboard from './Components/Board/Board';
+import Game from './Components/Game/Game';
 
 
 function App() {
 
  return (
   <div className="App bg-[#f8f8f8] h-screen">
-   <Gameboard />
+   <Game />
   </div>
  );
 }
