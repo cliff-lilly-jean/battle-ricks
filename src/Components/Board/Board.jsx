@@ -3,16 +3,15 @@ import Player from '../Player/Player';
 
 const Board = (startGame, endGame, winner) => {
 
- // The Board component contains an array, players of Player components.
-
- // ! Properties
+ // * Properties
  // The Board has an array of Cell components
+ const [cells, setCells] = useState([]);
 
- // The Board has an array of Player
+ // The Board component contains an array, players of Player components.
  const [players, setPlayers] = useState([]);
 
 
- // ! Methods
+ // * Methods
  const handleStartGame = () => {
   startGame = true;
   endGame = false;
@@ -47,10 +46,10 @@ const Board = (startGame, endGame, winner) => {
 
  return (
   <div className="board">
-   {/* players array */}
-   <button onClick={handleStartGame}>
+   {/* TODO: insert the players array */}
+   {/* <button onClick={handleStartGame}>
     Start Game
-   </button>
+   </button> */}
   </div>
  );
 };
