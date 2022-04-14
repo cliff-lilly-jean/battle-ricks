@@ -21,11 +21,12 @@ const Game = () => {
  const [cards, setCards] = useState([]);
 
  // Methods
- const getNewCharacterFromApi = async () => {
+ // Todo: Use callback functions to populate the data
+ const getNewCharacterFromApi = async (randomCallback) => {
 
   const randomCharacterNumber = Math.floor(Math.random() * 820) + 1;
 
-  await axios.get(`https://rickandmortyapi.com/api/character/${randomCharacterNumber}`)
+  const data = await axios.get(`https://rickandmortyapi.com/api/character/${randomCharacterNumber}`)
    .then(res => {
     let newCharacter = {
      id: res.data.id,
@@ -39,42 +40,52 @@ const Game = () => {
      ATK: Math.floor(Math.random() * 3000) + 1,
      DEF: Math.floor(Math.random() * 3000) + 1,
     };
-    setCards(card => [...card, newCharacter]);
+    randomCallback(newCharacter);
+    // return newCharacter;
    });
+  setCards(card => [...card, data]);
  };
 
- const buildDeck = () => {
-  // for (let i = 0; i < 80; i++) {
-  //  let character = getNewCharacterFromApi();
-  //  console.log(character);
+ // const go = (data) => {
+ //  console.log(data);
+ // };
 
-  // }
-  getNewCharacterFromApi();
+ const buildDeck = (data) => {
+  let newCard = data;
+  setCards(card => [...card, newCard]);
  };
-
-
- // Todo:
 
  const startGame = () => {
-  for (let i = 0; i < 80; i++) {
-   buildDeck();
+
+  for (let i = 0; i < 5; i++) {
+   getNewCharacterFromApi(buildDeck);
   }
+  console.log(cards);
 
-  // Divide the cards in half, 40 cards to each player
-  setPlayer1Deck(cards.splice(0, 40));
-  setPlayer2Deck(cards.splice(0, 40));
+  // // Build the total deck
+  // buildDeck();
 
-  // Build each player's hand, 5 cards to each player
-  setPlayer1Hand(player1Deck.splice(0, 5));
-  setPlayer2Hand(player2Deck.splice(0, 5));
+  // // Divide the cards in half, 40 cards to each player
+  // setPlayer1Deck(cards.splice(0, 40));
+  // setPlayer2Deck(cards.splice(0, 40));
 
-  // Randomly set an initial player to start the initial turn
-  let randomPlayerTurnNumber = Math.floor(Math.random() * 2) + 1;
-  setTurn('Player' + randomPlayerTurnNumber);
+  // // Build each player's hand, 5 cards to each player
+  // setPlayer1Hand(player1Deck.splice(0, 5));
+  // setPlayer2Hand(player2Deck.splice(0, 5));
 
-  // Change the gameOver state to false to start the game
-  setGameOver(false);
+  // // Randomly set an initial player to start the initial turn
+  // let randomPlayerTurnNumber = Math.floor(Math.random() * 2) + 1;
+  // setTurn('Player' + randomPlayerTurnNumber);
+
+  // // Change the gameOver state to false to start the game
+  // setGameOver(false);
  };
+
+ // console.log(`Turn: ${turn}\n\n\n Player 1:\n Deck: ${player1Deck}\n Hand: ${player1Hand}\n\n\n Player 2:\n Deck: ${player2Deck}\n Hand: ${player2Hand}`);
+
+ useEffect(() => {
+
+ }, [player1Deck, player2Deck, player1Hand, player2Hand]);
 
 
  return (
@@ -83,7 +94,6 @@ const Game = () => {
     Start Game
    </button>
    <Board player1Deck={player1Deck} player1Hand={player1Hand} player2Deck={player2Deck} player2Hand={player2Hand} turn={turn} />
-   {console.log(`Turn: ${turn}\n\n\n Player 1:\n Deck: ${player1Deck}\n Hand: ${player1Hand}\n\n\n Player 2:\n Deck: ${player2Deck}\n Hand: ${player2Hand}`)}
   </div>
  );
 };
