@@ -1,1 +1,42 @@
-{}
+[
+ {
+  "name": "Rick Sanchez",
+  "ATK": 2500,
+  "DEF": 3000,
+  "status": "Alive",
+  "species": "Human",
+  "location": "Earth"
+ },
+ {
+  "name": "Morty Smith",
+  "ATK": 1500,
+  "DEF": 1000,
+  "status": "Alive",
+  "species": "Human",
+  "location": "Earth"
+ },
+ {
+  "name": "Misc Jones",
+  "ATK": 500,
+  "DEF": 3000,
+  "status": "Alive",
+  "species": "Human",
+  "location": "Earth"
+ },
+ {
+  "name": "Fur Dang",
+  "ATK": 200,
+  "DEF": 300,
+  "status": "Alive",
+  "species": "Human",
+  "location": "Earth"
+ },
+ {
+  "name": "Beth Smith",
+  "ATK": 2700,
+  "DEF": 2200,
+  "status": "Alive",
+  "species": "Human",
+  "location": "Earth"
+ }
+]
