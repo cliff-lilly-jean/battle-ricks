@@ -1,40 +1,90 @@
 [
  {
+  "id": 1,
   "name": "Rick Sanchez",
-  "ATK": 2500,
-  "DEF": 3000,
+  "attack": 2500,
+  "defense": 3000,
   "status": "Alive",
   "species": "Human",
   "location": "Earth"
  },
  {
+  "id": 2,
   "name": "Morty Smith",
-  "ATK": 1500,
-  "DEF": 1000,
+  "attack": 1500,
+  "defense": 1000,
   "status": "Alive",
   "species": "Human",
   "location": "Earth"
  },
  {
+  "id": 3,
   "name": "Misc Jones",
-  "ATK": 500,
-  "DEF": 3000,
+  "attack": 500,
+  "defense": 3000,
   "status": "Alive",
   "species": "Human",
   "location": "Earth"
  },
  {
+  "id": 4,
   "name": "Fur Dang",
-  "ATK": 200,
-  "DEF": 300,
+  "attack": 200,
+  "defense": 300,
   "status": "Alive",
   "species": "Human",
   "location": "Earth"
  },
  {
+  "id": 5,
   "name": "Beth Smith",
-  "ATK": 2700,
-  "DEF": 2200,
+  "attack": 2700,
+  "defense": 2200,
+  "status": "Alive",
+  "species": "Human",
+  "location": "Earth"
+ },
+ {
+  "id": 6,
+  "name": "R",
+  "attack": 2500,
+  "defense": 3000,
+  "status": "Alive",
+  "species": "Human",
+  "location": "Earth"
+ },
+ {
+  "id": 7,
+  "name": "M",
+  "attack": 1500,
+  "defense": 1000,
+  "status": "Alive",
+  "species": "Human",
+  "location": "Earth"
+ },
+ {
+  "id": 8,
+  "name": "Mi",
+  "attack": 500,
+  "defense": 3000,
+  "status": "Alive",
+  "species": "Human",
+  "location": "Earth"
+ },
+ {
+  "id": 9,
+  "name": "Fu",
+  "attack": 200,
+  "defense": 300,
+  "status": "Alive",
+  "species": "Human",
+  "location": "Earth"
+ },
+ {
+  "id": 10,
+  "name": "Bet",
+  "attack": 2700,
+  "defense": 2200,
   "status": "Alive",
   "species": "Human",
   "location": "Earth"

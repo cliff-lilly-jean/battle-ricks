@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Field from '../Field/Field';
 
-const GameBoard = ({ deck }) => {
+const GameBoard = () => {
 
  // Game states
  const [gameOver, setGameOver] = useState(true);
@@ -16,7 +16,6 @@ const GameBoard = ({ deck }) => {
   } else {
    setTurn('cpu');
   }
-
  };
 
  const startGame = () => {
@@ -24,14 +23,16 @@ const GameBoard = ({ deck }) => {
   determineInitialTurn();
  };
 
- // useEffect(() => {
-
- // }, []);
+ useEffect(() => {
+  startGame();
+ }, []);
 
  return (
   <div>
+   {/* If gameOver is still true, hide the Field, else, show the Field and set the initial turn */}
+   {/* {console.log(turn, gameOver)} */}
    <Field />
-   <button onClick={startGame}>
+   <button className=' mx-auto block bg-gray-600 p-4 from-neutral-200 rounded-md' onClick={startGame}>
     Start Game
    </button>
   </div>

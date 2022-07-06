@@ -4,51 +4,12 @@ import GameBoard from './Components/GameBoard/GameBoard';
 
 function App() {
 
- const [gameDeck, setGameDeck] = useState([]);
 
- // useEffect(() => {
- //  let amountOfCardsToGenerate = 120;
- //  let randomNumber;
- //  let randomNumbersArr = [];
- //  let deck = [];
- //  let apiEndpoint = 'https://rickandmortyapi.com/api/character/';
-
-
- //  for (let i = 0; i < amountOfCardsToGenerate; i++) {
- //   randomNumber = Math.floor(Math.random() * 826);
- //   randomNumbersArr.push(randomNumber);
- //  }
-
-
- //  fetch(`${apiEndpoint}${randomNumbersArr}`)
- //   .then(res => res.json())
- //   .then(jsonData => {
- //    const amountOfCardsToAddToDeck = 80;
-
- //    for (let i = 0; i < amountOfCardsToAddToDeck; i++) {
- //     let newCharacterCard = {
- //      id: jsonData[i].id,
- //      name: jsonData[i].name,
- //      species: jsonData[i].species,
- //      status: jsonData[i].status,
- //      image: jsonData[i].image,
- //      gender: jsonData[i].gender,
- //      location: {
- //       name: jsonData[i].location.name,
- //       id: jsonData[i].location.id,
- //       dimension: jsonData[i].location.dimension
- //      }
- //     };
- //     deck.push(newCharacterCard);
- //    }
- //    setGameDeck(deck);
- //   });
- // }, [setGameDeck]);
 
  return (
   <div className="App bg-[#f8f8f8] h-screen">
-   <h1>Battle Ricks</h1>
-   <GameBoard deck={gameDeck} />
+   <h1 className='text-center mx-auto pt-6 text-6xl'>Battle Ricks</h1>
+   <GameBoard />
   </div>
  );
 }
