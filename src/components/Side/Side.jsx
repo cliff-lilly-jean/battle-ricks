@@ -32,6 +32,47 @@ const Side = ({ typeOfPlayer }) => {
  };
 
 
+ // useEffect(() => {
+ //  let amountOfCardsToGenerate = 120;
+ //  let randomNumber;
+ //  let randomNumbersArr = [];
+ //  let deck = [];
+ //  let apiEndpoint = 'https://rickandmortyapi.com/api/character/';
+
+
+ //  for (let i = 0; i < amountOfCardsToGenerate; i++) {
+ //   randomNumber = Math.floor(Math.random() * 826);
+ //   randomNumbersArr.push(randomNumber);
+ //  }
+
+
+ //  fetch(`${apiEndpoint}${randomNumbersArr}`)
+ //   .then(res => res.json())
+ //   .then(jsonData => {
+ //    const amountOfCardsToAddToDeck = 80;
+
+ //    for (let i = 0; i < amountOfCardsToAddToDeck; i++) {
+ //     let newCharacterCard = {
+ //      id: jsonData[i].id,
+ //      name: jsonData[i].name,
+ //      species: jsonData[i].species,
+ //      status: jsonData[i].status,
+ //      image: jsonData[i].image,
+ //      gender: jsonData[i].gender,
+ //      location: {
+ //       name: jsonData[i].location.name,
+ //       id: jsonData[i].location.id,
+ //       dimension: jsonData[i].location.dimension
+ //      }
+ //     };
+ //     deck.push(newCharacterCard);
+ //    }
+ //    setGameDeck(deck);
+ //   });
+ // }, [setGameDeck]);
+
+
+
 
  useEffect(() => {
 
@@ -47,10 +88,10 @@ const Side = ({ typeOfPlayer }) => {
 
    <h1><span className='font-bold'>User:</span> {typeOfPlayer}</h1>
    <p><span className='font-bold'>LP:</span> {lp}</p>
-   <div><span className='font-bold'>Deck:</span> <Card generatedCards={deck} /></div>
-   <p><span className='font-bold'>Field:</span> {fieldCards}</p>
-   <div><span className='font-bold'>Hand:</span> <Card generatedCards={hand} /> </div>
-   <p><span className='font-bold'>Graveyard:</span> {graveYard}</p>
+   <div><span className='font-bold'>Deck:</span> <Card generatedCard={deck} /></div>
+   <div><span className='font-bold'>Field:</span> <Card generatedCard={fieldCards} /></div>
+   <div><span className='font-bold'>Hand:</span> <Card generatedCard={hand} /> </div>
+   <div><span className='font-bold'>Graveyard:</span> {graveYard.length}</div>
   </div>
  );
 };

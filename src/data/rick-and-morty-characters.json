@@ -5,7 +5,7 @@
   "attack": 2500,
   "defense": 3000,
   "status": "Alive",
-  "species": "Human",
+  "species": "Alien",
   "location": "Earth"
  },
  {
@@ -14,7 +14,7 @@
   "attack": 1500,
   "defense": 1000,
   "status": "Alive",
-  "species": "Human",
+  "species": "Humanoid",
   "location": "Earth"
  },
  {
@@ -23,7 +23,7 @@
   "attack": 500,
   "defense": 3000,
   "status": "Alive",
-  "species": "Human",
+  "species": "Poopybutthole",
   "location": "Earth"
  },
  {
@@ -32,7 +32,7 @@
   "attack": 200,
   "defense": 300,
   "status": "Alive",
-  "species": "Human",
+  "species": "Mythological Creature",
   "location": "Earth"
  },
  {
@@ -41,7 +41,7 @@
   "attack": 2700,
   "defense": 2200,
   "status": "Alive",
-  "species": "Human",
+  "species": "Animal",
   "location": "Earth"
  },
  {
@@ -50,8 +50,9 @@
   "attack": 2500,
   "defense": 3000,
   "status": "Alive",
-  "species": "Human",
-  "location": "Earth"
+  "species": "Robot",
+  "location": "Earth",
+  "gender": "Male"
  },
  {
   "id": 7,
@@ -59,8 +60,9 @@
   "attack": 1500,
   "defense": 1000,
   "status": "Alive",
-  "species": "Human",
-  "location": "Earth"
+  "species": "Cronenberg",
+  "location": "Earth",
+  "gender": "Female"
  },
  {
   "id": 8,
@@ -68,7 +70,7 @@
   "attack": 500,
   "defense": 3000,
   "status": "Alive",
-  "species": "Human",
+  "species": "Disease",
   "location": "Earth"
  },
  {
