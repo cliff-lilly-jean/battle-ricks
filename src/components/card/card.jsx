@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import maleIcon from '../../assets/imgs/male-icon.png';
+import femaleIcon from '../../assets/imgs/female-icon.png';
 const Card = ({ generatedCard }) => {
 
  const [faceDown, setFaceDown] = useState(true);
@@ -19,8 +20,8 @@ const Card = ({ generatedCard }) => {
  };
 
  const cardGenderIcons = {
-  "Male": '♂',
-  "Female": "♀"
+  "Male": maleIcon,
+  "Female": femaleIcon,
  };
 
  const cardSpeciesStrengthWeakness = {
@@ -53,20 +54,18 @@ const Card = ({ generatedCard }) => {
   */
  };
 
-
  return (
   <div className='character-card ml-8' >
    {generatedCard.map(character => (
     <div className='my-4' style={{ background: cardSpeciesColors[character.species] }} key={character.id}>
-
      <div>{`Name: ${character.name}`}</div>
      <div>{`Species: ${character.species}`}</div>
      <div>{`Attack: ${character.attack}`}</div>
      <div>{`Defense: ${character.defense}`}</div>
      <div>{`Status: ${character.status}`}</div>
-     <div>{`Gender: ${cardGenderIcons[character.gender]}`}</div>
+     <div><img src={cardGenderIcons[character.gender]} alt="Gender icon" width="25" /></div>
+     <div>{`Image: ${character.image}`}</div>
      <div>{`Location: ${character.location}`}</div>
-     {console.log(cardSpeciesStrengthWeakness.Alien.strongAgainst)}
     </div>
 
    ))

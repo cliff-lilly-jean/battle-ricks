@@ -6,7 +6,8 @@
   "defense": 3000,
   "status": "Alive",
   "species": "Alien",
-  "location": "Earth"
+  "location": "Earth",
+  "gender": "Female"
  },
  {
   "id": 2,
@@ -15,7 +16,8 @@
   "defense": 1000,
   "status": "Alive",
   "species": "Humanoid",
-  "location": "Earth"
+  "location": "Earth",
+  "gender": "Female"
  },
  {
   "id": 3,
@@ -24,7 +26,8 @@
   "defense": 3000,
   "status": "Alive",
   "species": "Poopybutthole",
-  "location": "Earth"
+  "location": "Earth",
+  "gender": "Female"
  },
  {
   "id": 4,
@@ -33,7 +36,8 @@
   "defense": 300,
   "status": "Alive",
   "species": "Mythological Creature",
-  "location": "Earth"
+  "location": "Earth",
+  "gender": "Female"
  },
  {
   "id": 5,
@@ -42,7 +46,8 @@
   "defense": 2200,
   "status": "Alive",
   "species": "Animal",
-  "location": "Earth"
+  "location": "Earth",
+  "gender": "Female"
  },
  {
   "id": 6,
@@ -71,7 +76,8 @@
   "defense": 3000,
   "status": "Alive",
   "species": "Disease",
-  "location": "Earth"
+  "location": "Earth",
+  "gender": "Female"
  },
  {
   "id": 9,
@@ -80,7 +86,8 @@
   "defense": 300,
   "status": "Alive",
   "species": "Human",
-  "location": "Earth"
+  "location": "Earth",
+  "gender": "Female"
  },
  {
   "id": 10,
@@ -89,6 +96,7 @@
   "defense": 2200,
   "status": "Alive",
   "species": "Human",
-  "location": "Earth"
+  "location": "Earth",
+  "gender": "Female"
  }
 ]
