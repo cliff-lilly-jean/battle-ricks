@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Side from '../Side/Side';
 import cpuUserNames from '../../Data/cpu-player-names-list.json';
 
-const Field = () => {
+const Field = ({ startTheGame }) => {
 
     // Setup Players
     // const user = prompt();
@@ -16,6 +16,7 @@ const Field = () => {
         <div>
             <Side typeOfPlayer={cpu} />
             <Side typeOfPlayer={user} />
+            <button className=' mx-auto block bg-gray-600 p-4 from-neutral-200 rounded-md' onClick={() => startTheGame()}>Start Game</button>
         </div>
     );
 };

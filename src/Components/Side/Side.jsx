@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Card from "../Card/Card";
 import characters from "../../Data/rick-and-morty-characters.json";
 import createADeck from '../../Functions/Side/createADeck';
 import createAHand from '../../Functions/Side/createAHand';
+import Player from "../Player/Player";
 
 const Side = ({ typeOfPlayer }) => {
   // The deck is an array of Card Components
@@ -33,12 +33,7 @@ const Side = ({ typeOfPlayer }) => {
 
   return (
     <div className=" my-5">
-      <h1><span className="font-bold">User:</span> {typeOfPlayer}</h1>
-      <p><span className="font-bold">LP:</span> {lp}</p>
-      <div><span className="font-bold">Deck:</span> <Card generatedCard={deck} /></div>
-      <div><span className="font-bold">Field:</span>{" "} <Card generatedCard={fieldCards} /></div>
-      <div><span className="font-bold">Hand:</span> <Card generatedCard={hand} />{" "}</div>
-      <div><span className="font-bold">Graveyard:</span> {graveYard.length}</div>
+      <Player player={typeOfPlayer} playerDeck={deck} playerHand={hand} playerHealth={lp} playerFieldCards={fieldCards} playerGraveYard={graveYard} />
     </div>
   );
 };
