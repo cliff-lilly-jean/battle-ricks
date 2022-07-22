@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import cardStrengthWeakness from '../../Data/Card/cardSpeciesStrengthAndWeakness';
 import cardSpeciesColors from '../../Data/Card/cardSpeciesColors';
 import cardGenderIcons from '../../Data/Card/cardGenderIcons';
+import characters from '../../Data/rick-and-morty-characters.json';
 
 
 
@@ -16,24 +17,26 @@ const Card = ({ generateCards }) => {
 
 
   return (
-    <div className='character-card ml-8' onClick={console.log('')}>
-      {generateCards.map(character => (
-        <div className='my-4' style={{ background: cardSpeciesColors[character.species] }} key={character.id}>
-          <div>{`Name: ${character.name}`}</div>
-          <div>{`Species: ${character.species}`}</div>
-          <div>{`Attack: ${character.attack}`}</div>
-          <div>{`Defense: ${character.defense}`}</div>
-          <div>{`Status: ${character.status}`}</div>
-          <div><img src={cardGenderIcons[character.gender]} alt="Gender icon" width="25" /></div>
-          <div>{`Image: ${character.image}`}</div>
-          <div>{`Location: ${character.location}`}</div>
-          <div>{`Card Face: ${faceDown}`}</div>
-          <div>{`Card Position: ${attackPosition}`}</div>
-          <button onClick={() => attack(character.attack)}>ATK</button>
-        </div>
-
-      ))
-      }
+    <div className='findCard-card ml-8' >
+      {generateCards.map(card => {
+        return (
+          <div onClick={() => console.log(`Card: ${card.name}`)} className='my-4' style={{ background: cardSpeciesColors[card.species] }} key={card.id}>
+            <div>{`Name: ${card.name}`}</div>
+            <div>{`Species: ${card.species}`}</div>
+            <div>{`Attack: ${card.attack}`}</div>
+            <div>{`Defense: ${card.defense}`}</div>
+            <div>{`Status: ${card.status}`}</div>
+            <div><img src={cardGenderIcons[card.gender]} alt="Gender icon" width="25" /></div>
+            <div>{`Image: ${card.image}`}</div>
+            <div>{`Location: ${card.location}`}</div>
+            <div>{`Card Face: ${faceDown}`}</div>
+            <div>{`Card Position: ${attackPosition}`}</div>
+            <button style={{ margin: "5px auto", display: "block", padding: "15px", background: "#44acba" }} onClick={() => attack(card.attack)}>ATK</button>
+            <button style={{ margin: "5px auto", display: "block", padding: "15px", background: "#44acba" }} onClick={() => { setAttackPosition(!attackPosition); console.log(card.id); }}>Set Attack position</button>
+            <button style={{ margin: "5px auto", display: "block", padding: "15px", background: "#44acba" }} onClick={() => { setFaceDown(!faceDown); console.log(card.id); }}>Set Face</button>
+          </div>
+        );
+      })}
     </div >
   );
 };
