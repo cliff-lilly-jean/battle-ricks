@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import cardStrengthWeakness from '../../Data/Card/cardSpeciesStrengthAndWeakness';
 import cardSpeciesColors from '../../Data/Card/cardSpeciesColors';
 import cardGenderIcons from '../../Data/Card/cardGenderIcons';
-import characters from '../../Data/rick-and-morty-characters.json';
 
 
 
@@ -14,6 +13,10 @@ const Card = ({ generateCards }) => {
   const attack = (charAtkVal) => {
     console.log(charAtkVal);
   };
+
+  useEffect(() => {
+
+  }, []);
 
 
   return (
