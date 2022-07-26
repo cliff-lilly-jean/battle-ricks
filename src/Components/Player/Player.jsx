@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import createADeck from '../../Functions/Side/createADeck';
-import createAHand from '../../Functions/Side/createAHand';
 import Deck from '../Deck/Deck';
 
-const Player = ({ player }) => {
+const Player = ({ player, playerDeck, playerHand }) => {
 
    // The deck is an array of Card Components
    const [deck, setDeck] = useState([]);
@@ -19,22 +17,21 @@ const Player = ({ player }) => {
    // The graveYard is an array of Card Components
    const [graveYard, setGraveYard] = useState([]);
 
-   let amountToCutForDeck = 5;
-   let amountToCutForHand = 2;
-
 
    useEffect(() => {
-      // let newDeck = createADeck(characters, amountToCutForDeck);
-      // let newHand = createAHand(newDeck, amountToCutForHand);
+      let decks = playerDeck;
+      let hands = playerHand;
 
-      // setDeck(newDeck);
-      // setHand(newHand);
-   }, []);
+      setDeck(decks);
+      setHand(hands);
+
+   }, [deck, hand]);
 
 
    return (
       <div>
          {player.name}
+         {/* {console.log(player, playerDeck, playerHand)} */}
          <p><span className="font-bold">LP:</span> {lp}</p>
          <div><span className="font-bold">Deck:</span> <Deck typeOfDeck={deck} /></div>
          <div><span className="font-bold">Field:</span> <Deck typeOfDeck={fieldCards} /></div>
