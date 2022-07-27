@@ -11,7 +11,6 @@ const Field = () => {
  const randomCharacterNumberForCpu = Math.floor(Math.random() * 4900);
  const cpu = cpuUserNames.names[randomCharacterNumberForCpu];
 
-
  return (
   <div>
    <Side typeOfPlayer={cpu} />

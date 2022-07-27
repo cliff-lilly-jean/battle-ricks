@@ -7,7 +7,8 @@
   "status": "Alive",
   "species": "Alien",
   "location": "Earth",
-  "gender": "Female"
+  "gender": "Female",
+  "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
  },
  {
   "id": 2,
@@ -17,7 +18,8 @@
   "status": "Alive",
   "species": "Humanoid",
   "location": "Earth",
-  "gender": "Female"
+  "gender": "Female",
+  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
  },
  {
   "id": 3,
@@ -27,7 +29,8 @@
   "status": "Alive",
   "species": "Poopybutthole",
   "location": "Earth",
-  "gender": "Female"
+  "gender": "Female",
+  "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg"
  },
  {
   "id": 4,
@@ -37,7 +40,8 @@
   "status": "Alive",
   "species": "Mythological Creature",
   "location": "Earth",
-  "gender": "Female"
+  "gender": "Female",
+  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
  },
  {
   "id": 5,
@@ -47,7 +51,8 @@
   "status": "Alive",
   "species": "Animal",
   "location": "Earth",
-  "gender": "Female"
+  "gender": "Female",
+  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
  },
  {
   "id": 6,
@@ -57,7 +62,8 @@
   "status": "Alive",
   "species": "Robot",
   "location": "Earth",
-  "gender": "Male"
+  "gender": "Male",
+  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
  },
  {
   "id": 7,
@@ -67,7 +73,8 @@
   "status": "Alive",
   "species": "Cronenberg",
   "location": "Earth",
-  "gender": "Female"
+  "gender": "Female",
+  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
  },
  {
   "id": 8,
@@ -77,7 +84,8 @@
   "status": "Alive",
   "species": "Disease",
   "location": "Earth",
-  "gender": "Female"
+  "gender": "Female",
+  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
  },
  {
   "id": 9,
@@ -87,7 +95,8 @@
   "status": "Alive",
   "species": "Human",
   "location": "Earth",
-  "gender": "Female"
+  "gender": "Female",
+  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
  },
  {
   "id": 10,
@@ -97,6 +106,7 @@
   "status": "Alive",
   "species": "Human",
   "location": "Earth",
-  "gender": "Female"
+  "gender": "Genderless",
+  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
  }
 ]

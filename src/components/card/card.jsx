@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import maleIcon from '../../assets/imgs/male-icon.png';
 import femaleIcon from '../../assets/imgs/female-icon.png';
+import genderlessIcon from '../../assets/imgs/genderless-icon.png';
+import unknownIcon from '../../assets/imgs/unknown.png';
+
 const Card = ({ generatedCard }) => {
 
- const [faceDown, setFaceDown] = useState(true);
- const [attackPosition, setAttackPosition] = useState(false);
+ const [faceDown, setFaceDown] = useState('');
+ const [cardPosition, setCardPosition] = useState('');
+
 
  const cardSpeciesColors = {
   'Human': '#2ec4b6',
@@ -22,6 +26,8 @@ const Card = ({ generatedCard }) => {
  const cardGenderIcons = {
   "Male": maleIcon,
   "Female": femaleIcon,
+  "Genderless": genderlessIcon,
+  "unknown": unknownIcon
  };
 
  const cardSpeciesStrengthWeakness = {
@@ -54,25 +60,80 @@ const Card = ({ generatedCard }) => {
   */
  };
 
+ /*
+
+ TODO: add an object, cardMode that holds the keys: attackMode and defenseMode which will be used to change the design and positioning of the card
+
+ TODO: add an object, cardFace that holds the keys: faceDown and faceUp which will be used to change the design and positioning of the card
+
+ */
+
+ const updateCardFace = (faceVal, cardId) => {
+  if (cardId) {
+   setFaceDown(faceVal);
+  } else {
+   return;
+  }
+ };
+
+ const updateCardPosition = (positionVal, cardId) => {
+  if (cardId) {
+   setCardPosition(positionVal);
+  } else {
+   return;
+  }
+
+ };
+
+ useEffect(() => {
+
+ }, [cardPosition, faceDown]);
+
+
+
  return (
-  <div className='character-card ml-8' >
+  <div className='character-card ml-8'>
    {generatedCard.map(character => (
     <div className='my-4' style={{ background: cardSpeciesColors[character.species] }} key={character.id}>
-     <div>{`Name: ${character.name}`}</div>
-     <div>{`Species: ${character.species}`}</div>
-     <div>{`Attack: ${character.attack}`}</div>
-     <div>{`Defense: ${character.defense}`}</div>
-     <div>{`Status: ${character.status}`}</div>
-     <div><img src={cardGenderIcons[character.gender]} alt="Gender icon" width="25" /></div>
-     <div>{`Image: ${character.image}`}</div>
-     <div>{`Location: ${character.location}`}</div>
+     <div>
+      {`Id: ${character.id}`}
+     </div>
+     <div>
+      {`Name: ${character.name}`}
+     </div>
+     <div>
+      {`Species: ${character.species}`}
+     </div>
+     <div>
+      {`Attack: ${character.attack}`}
+     </div>
+     <div>
+      {`Defense: ${character.defense}`}
+     </div>
+     <div>
+      {`Status: ${character.status}`}
+     </div>
+     <div>
+      <img src={cardGenderIcons[character.gender]} alt="Gender icon" width="25" />
+     </div>
+     <div>
+      <img src={character.image} alt="Character" width="150" />
+     </div>
+     <div>
+      {`Location: ${character.location}`}
+     </div>
+     <div>
+      <button onClick={() => updateCardFace('faceDown', character.id)}>change card face</button>
+      {faceDown}
+     </div>
+     <div>
+      <button onClick={() => updateCardPosition('attackMode', character.id)}>change card position</button>
+      {cardPosition}
+     </div>
     </div>
-
    ))
-
    }
-
-  </div >
+  </div>
  );
 };
 
