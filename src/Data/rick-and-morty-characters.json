@@ -8,7 +8,9 @@
   "species": "Alien",
   "location": "Earth",
   "gender": "Female",
-  "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+  "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+  "faceDown": true,
+  "attackPosition": false
  },
  {
   "id": 2,
@@ -19,7 +21,9 @@
   "species": "Humanoid",
   "location": "Earth",
   "gender": "Female",
-  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+  "faceDown": true,
+  "attackPosition": false
  },
  {
   "id": 3,
@@ -30,7 +34,9 @@
   "species": "Poopybutthole",
   "location": "Earth",
   "gender": "Female",
-  "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg"
+  "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+  "faceDown": true,
+  "attackPosition": false
  },
  {
   "id": 4,
@@ -41,7 +47,9 @@
   "species": "Mythological Creature",
   "location": "Earth",
   "gender": "Female",
-  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+  "faceDown": true,
+  "attackPosition": false
  },
  {
   "id": 5,
@@ -52,7 +60,9 @@
   "species": "Animal",
   "location": "Earth",
   "gender": "Female",
-  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+  "faceDown": true,
+  "attackPosition": false
  },
  {
   "id": 6,
@@ -63,7 +73,9 @@
   "species": "Robot",
   "location": "Earth",
   "gender": "Male",
-  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+  "faceDown": true,
+  "attackPosition": false
  },
  {
   "id": 7,
@@ -74,7 +86,9 @@
   "species": "Cronenberg",
   "location": "Earth",
   "gender": "Female",
-  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+  "faceDown": true,
+  "attackPosition": false
  },
  {
   "id": 8,
@@ -85,7 +99,9 @@
   "species": "Disease",
   "location": "Earth",
   "gender": "Female",
-  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+  "faceDown": true,
+  "attackPosition": false
  },
  {
   "id": 9,
@@ -96,7 +112,9 @@
   "species": "Human",
   "location": "Earth",
   "gender": "Female",
-  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+  "faceDown": true,
+  "attackPosition": false
  },
  {
   "id": 10,
@@ -107,6 +125,8 @@
   "species": "Human",
   "location": "Earth",
   "gender": "Genderless",
-  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+  "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+  "faceDown": true,
+  "attackPosition": false
  }
 ]
