@@ -10,6 +10,7 @@ const Card = ({ generateCards }) => {
 
   const [faceDown, setFaceDown] = useState(true);
   const [attackPosition, setAttackPosition] = useState(false);
+  // Hope this fixes it
 
   let card = buildACard(generateCards, cardSpeciesColors, cardGenderIcons, faceDown, attackPosition, setFaceDown, setAttackPosition);
 
