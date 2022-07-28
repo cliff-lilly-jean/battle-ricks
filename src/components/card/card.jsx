@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import cardStrengthWeakness from '../../Data/Card/cardSpeciesStrengthAndWeakness';
-import cardSpeciesColors from '../../Data/Card/cardSpeciesColors';
-import cardGenderIcons from '../../Data/Card/cardGenderIcons';
-import buildACard from '../../Functions/Card/buildACard';
 
+const Card = ({ card }) => {
 
-
-const Card = ({ generateCards }) => {
-
-  const [faceDown, setFaceDown] = useState(true);
-  const [attackPosition, setAttackPosition] = useState(false);
-
-  let card = buildACard(generateCards, cardSpeciesColors, cardGenderIcons, faceDown, attackPosition, setFaceDown, setAttackPosition);
+  const [id, setId] = useState('');
+  const [name, setName] = useState('');
+  const [species, setSpecies] = useState('');
+  const [attack, setAttack] = useState('');
+  const [defense, setDefense] = useState('');
+  const [status, setStatus] = useState('');
+  const [genderIcon, setGenderIcon] = useState('');
+  const [image, setImage] = useState('');
+  const [location, setLocation] = useState('');
+  const [cardFaceDown, setCardFaceDown] = useState(true);
+  const [cardAttackPosition, setCardAttackPosition] = useState(true);
 
 
   return (

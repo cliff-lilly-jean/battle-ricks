@@ -1,12 +1,14 @@
 
 import React from 'react';
-import Card from '../Card/Card';
+import Cards from '../Cards/Cards';
 
 const Deck = ({ typeOfDeck }) => {
+
     return (
         <div>
             <div className='cards'>
-                <Card generateCards={typeOfDeck} />
+                {console.log(typeOfDeck)}
+                <Cards generateCards={typeOfDeck} />
             </div>
         </div>
 
