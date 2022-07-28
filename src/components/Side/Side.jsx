@@ -10,6 +10,7 @@ const Side = ({ typeOfPlayer, typeOfDeck, typeOfHand }) => {
 
   return (
     <div className=" my-5">
+
       <Player player={typeOfPlayer} playerDeck={typeOfDeck} playerHand={typeOfHand} />
     </div>
   );
