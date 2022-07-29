@@ -4,11 +4,10 @@ import cardSpeciesColors from '../../Data/Card/cardSpeciesColors';
 
 
 
-const Card = ({ cardId, cardName, cardSpecies, cardAttackPoints, cardDefensePoints, cardHealthStatus, cardGenderIcon, cardImage, cardHomeLocation, cardFaceDownPosition, cardAttackPosition }) => {
+const Card = ({ cardId, cardName, cardSpecies, cardAttackPoints, cardDefensePoints, cardHealthStatus, cardGenderIcon, cardImage, cardHomeLocation, cardFaceDownPosition, cardAttackPosition, changeCardFace }) => {
 
-  // const [faceDown, setFaceDown] = useState(true);
-  // const [attackPosition, setAttackPosition] = useState(false);
-
+  // const [faceDown, setFaceDown] = useState(cardFaceDownPosition);
+  // // const [attackPosition, setAttackPosition] = useState(false);
 
   return (
     <div className='findCard-card ml-8' style={{ background: cardSpeciesColors[cardSpecies], padding: "1rem 1.5rem", maxWidth: "10000px", margin: "0 auto" }}>
@@ -25,7 +24,7 @@ const Card = ({ cardId, cardName, cardSpecies, cardAttackPoints, cardDefensePoin
         <p>{`Card face down: ${cardFaceDownPosition}`}</p>
         <p>{`Card attack position:`} {cardAttackPosition}</p>
       </div>
-      <button onClick={() => console.log(`attack: ${cardAttackPoints}\nId: ${cardId}`)} style={{ margin: "1rem auto", display: "block", background: "teal", padding: ".5rem 1.5rem", color: "white" }}>Attack</button>
+      <button onClick={() => changeCardFace()} style={{ margin: "1rem auto", display: "block", background: "teal", padding: ".5rem 1.5rem", color: "white" }}>Attack</button>
     </div >
   );
 };
