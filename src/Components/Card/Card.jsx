@@ -2,29 +2,30 @@ import React, { useEffect, useState } from 'react';
 import cardSpeciesColors from '../../Data/Card/cardSpeciesColors';
 
 
+const Card = ({ cardId, cardName, cardSpecies, cardAttackPoints, cardDefensePoints, cardHealthStatus, cardGenderIcon, cardImage, cardHomeLocation, cardFaceDownPosition, cardAttackPosition }) => {
 
-
-const Card = ({ cardId, cardName, cardSpecies, cardAttackPoints, cardDefensePoints, cardHealthStatus, cardGenderIcon, cardImage, cardHomeLocation, cardFaceDownPosition, cardAttackPosition, changeCardFace }) => {
-
-  // const [faceDown, setFaceDown] = useState(cardFaceDownPosition);
-  // // const [attackPosition, setAttackPosition] = useState(false);
+  const [changeCardFaceDownPosition, setChangeCardFaceDownPosition] = useState(cardFaceDownPosition);
+  const [changeCardAttackPosition, setChangeCardAttackPosition] = useState(cardAttackPosition);
 
   return (
     <div className='findCard-card ml-8' style={{ background: cardSpeciesColors[cardSpecies], padding: "1rem 1.5rem", maxWidth: "10000px", margin: "0 auto" }}>
       <div className="cardContent" style={{}}>
-        <p>{`Card id: ${cardId}`}</p>
-        <p>{`Card name: ${cardName}`}</p>
-        <p>{`Card species: ${cardSpecies}`}</p>
-        <p>{`Card attack: ${cardAttackPoints}`}</p>
-        <p>{`Card defense: ${cardDefensePoints}`}</p>
-        <p>{`Card status: ${cardHealthStatus}`}</p>
-        <p>{`Card gender icon:`} {cardGenderIcon}</p>
-        <p>{`Card image:`} {cardImage}</p>
-        <p>{`Card location: ${cardHomeLocation}`}</p>
-        <p>{`Card face down: ${cardFaceDownPosition}`}</p>
-        <p>{`Card attack position:`} {cardAttackPosition}</p>
+        <p>{`Name: ${cardName}`}</p>
+        <p>{`Image:`} {cardImage}</p>
+        <p>{`Species: ${cardSpecies}`}</p>
+        <p>{`Attack: ${cardAttackPoints}`}</p>
+        <p>{`Defense: ${cardDefensePoints}`}</p>
+        <p>{`Status: ${cardHealthStatus}`}</p>
+        <p>{`Gender:`} {cardGenderIcon}</p>
+        <p>{`Home: ${cardHomeLocation}`}</p>
+        <p>{`Face: ${changeCardFaceDownPosition ? "Face Down" : "Face Up"}`} </p>
+        <p>{`Position: ${changeCardAttackPosition ? "Attack Position" : "Defense Position"}`}</p>
       </div>
-      <button onClick={() => changeCardFace()} style={{ margin: "1rem auto", display: "block", background: "teal", padding: ".5rem 1.5rem", color: "white" }}>Attack</button>
+
+      {/* Card Actions */}
+      <button onClick={() => setChangeCardFaceDownPosition(!changeCardFaceDownPosition)} style={{ margin: "1rem auto", display: "block", background: "teal", padding: ".5rem 1.5rem", color: "white" }}>Change Face Position</button>
+      <button onClick={() => setChangeCardAttackPosition(!changeCardAttackPosition)} style={{ margin: "1rem auto", display: "block", background: "olive", padding: ".5rem 1.5rem", color: "white" }}>Change Attack Position</button>
+      {/* TODO: Create a button and function for attack */}
     </div >
   );
 };
