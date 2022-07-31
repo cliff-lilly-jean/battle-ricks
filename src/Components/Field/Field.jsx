@@ -67,7 +67,7 @@ const Field = ({ startTheGame }) => {
             <Side typeOfPlayer={userPlayer} typeOfDeck={userDeck} typeOfHand={userHand} />
             <Side typeOfPlayer={aiPlayer} typeOfDeck={aiDeck} typeOfHand={aiHand} />
             {/* {console.log("GameDeck: ", gameDeck, "\n\nUser: ", userPlayer, "\nUser Deck: ", userDeck, "\nUser hand: ", userHand, "\n\nAI: ", aiPlayer, "\nAI deck: ", aiDeck, "\nAI hand: ", aiHand)} */}
-            <button className=' mx-auto block bg-gray-600 p-4 from-neutral-200 rounded-md' onClick={() => startTheGame()}>Start Game</button>
+
         </div>
     );
 };
