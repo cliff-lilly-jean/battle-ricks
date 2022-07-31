@@ -1,34 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import cardSpeciesColors from '../../Data/Card/cardSpeciesColors';
-import cardSpeciesStrengthWeakness from '../../Data/Card/cardSpeciesStrengthAndWeakness';
+import { cardStrengths, cardWeakness } from '../../Data/Card/cardSpeciesStrengthAndWeakness';
+import attack from '../../Functions/Card/attack';
 
 
 const Card = ({ cardName, cardSpecies, cardAttackPoints, cardDefensePoints, cardHealthStatus, cardGenderIcon, cardImage, cardHomeLocation, cardFaceDownPosition, cardAttackPosition }) => {
 
- const [changeCardFaceDownPosition, setChangeCardFaceDownPosition] = useState(cardFaceDownPosition);
- const [changeCardAttackPosition, setChangeCardAttackPosition] = useState(cardAttackPosition);
+  const [changeCardFaceDownPosition, setChangeCardFaceDownPosition] = useState(cardFaceDownPosition);
+  const [changeCardAttackPosition, setChangeCardAttackPosition] = useState(cardAttackPosition);
 
- return (
-  <div className='findCard-card ml-8' style={{ background: cardSpeciesColors[cardSpecies], padding: "1rem 1.5rem", maxWidth: "10000px", margin: "0 auto" }}>
-   <div className="cardContent" style={{}}>
-    <p>{`Name: ${cardName}`}</p>
-    <p>{`Image:`} {cardImage}</p>
-    <p>{`Species: ${cardSpecies}`}</p>
-    <p>{`Attack: ${cardAttackPoints}`}</p>
-    <p>{`Defense: ${cardDefensePoints}`}</p>
-    <p>{`Status: ${cardHealthStatus}`}</p>
-    <p>{`Gender:`} {cardGenderIcon}</p>
-    <p>{`Home: ${cardHomeLocation}`}</p>
-    <p>{`Face: ${changeCardFaceDownPosition ? "Face Down" : "Face Up"}`} </p>
-    <p>{`Position: ${changeCardAttackPosition ? "Attack Position" : "Defense Position"}`}</p>
-    { }
-   </div>
+  return (
+    <div className='findCard-card ml-8' style={{ background: cardSpeciesColors[cardSpecies], padding: "1rem 1.5rem", maxWidth: "10000px", margin: "0 auto" }}>
+      <div className="cardContent" style={{}}>
+        <p>{`Name: ${cardName}`}</p>
+        <p>{`Image:`} {cardImage}</p>
+        <p>{`Species: ${cardSpecies}`}</p>
+        <p>{`Attack: ${cardAttackPoints}`}</p>
+        <p>{`Defense: ${cardDefensePoints}`}</p>
+        <p>{`Status: ${cardHealthStatus}`}</p>
+        <p>{`Gender:`} {cardGenderIcon}</p>
+        <p>{`Home: ${cardHomeLocation}`}</p>
+        <p>{`Face: ${changeCardFaceDownPosition ? "Face Down" : "Face Up"}`} </p>
+        <p>{`Position: ${changeCardAttackPosition ? "Attack Position" : "Defense Position"}`}</p>
+        { }
+      </div>
 
-   {/* Card Actions */}
-   <button onClick={() => setChangeCardFaceDownPosition(!changeCardFaceDownPosition)} style={{ margin: "1rem auto", display: "block", background: "teal", padding: ".5rem 1.5rem", color: "white" }}>Change Face Position</button>
-   <button onClick={() => setChangeCardAttackPosition(!changeCardAttackPosition)} style={{ margin: "1rem auto", display: "block", background: "olive", padding: ".5rem 1.5rem", color: "white" }}>Change Attack Position</button>
-   <button onClick={() => console.log(`Card attack: ${cardAttackPoints} \nCard attack  with bonus: ${cardSpeciesStrengthWeakness.Human.strongAgainst.Animal() + cardAttackPoints}`)} style={{ margin: "1rem auto", display: "block", background: "olive", padding: ".5rem 1.5rem", color: "white" }}>Attack</button>
-   {/*
+      {/* Card Actions */}
+      <button onClick={() => setChangeCardFaceDownPosition(!changeCardFaceDownPosition)} style={{ margin: "1rem auto", display: "block", background: "teal", padding: ".5rem 1.5rem", color: "white" }}>Change Face Position</button>
+      <button onClick={() => setChangeCardAttackPosition(!changeCardAttackPosition)} style={{ margin: "1rem auto", display: "block", background: "olive", padding: ".5rem 1.5rem", color: "white" }}>Change Attack Position</button>
+      <button onClick={() => console.log(`Card attack: ${cardSpecies} \nCard attack  with bonus: ${attack(cardSpecies, cardAttackPoints, "Animal", cardStrengths)}`)} style={{ margin: "1rem auto", display: "block", background: "olive", padding: ".5rem 1.5rem", color: "white" }}>Attack</button>
+      {/*
 
       TODO: Create attack functionality
 
@@ -47,8 +48,8 @@ const Card = ({ cardName, cardSpecies, cardAttackPoints, cardDefensePoints, card
 
 
       */}
-  </div >
- );
+    </div >
+  );
 };
 
 export default Card;
