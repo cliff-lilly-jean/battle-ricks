@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Player from "../Player/Player";
 
+import gamePhase from "../../Data/Side/gamePhase";
+
 const Side = ({ typeOfPlayer, typeOfDeck, typeOfHand }) => {
 
   // TODO: add phases; draw, place, attack
@@ -8,10 +10,24 @@ const Side = ({ typeOfPlayer, typeOfDeck, typeOfHand }) => {
   const [phase, setPhase] = useState('');
 
 
+  let newPhase = gamePhase.attackPhase;
+
+  // TODO: build the game play loop
+  const gameLoop = () => {
+
+  };
+
+  useEffect(() => {
+
+
+  }, [phase]);
+
+
   return (
     <div className=" my-5">
-
       <Player player={typeOfPlayer} playerDeck={typeOfDeck} playerHand={typeOfHand} />
+      {/* Phase Testing button */}
+      <button onClick={() => setPhase(newPhase)} style={{ margin: "1rem auto", display: "block", background: "teal", padding: ".5rem 1.5rem", color: "white" }}>set phase</button>
     </div>
   );
 };
