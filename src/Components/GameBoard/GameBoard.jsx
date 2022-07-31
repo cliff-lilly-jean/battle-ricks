@@ -2,18 +2,14 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Field from '../Field/Field';
 import init from '../../Functions/Gameboard/getInit';
-import determineInitialTurn from '../../Functions/Gameboard/determineInitialTurn';
 
 const GameBoard = () => {
 
     // Game states
-    const [gameOver, setGameOver] = useState('');
+    const [gameOver, setGameOver] = useState(true);
     const [turn, setTurn] = useState('');
     const [winner, setWinner] = useState('');
 
-    const run = () => {
-        console.log('ran');
-    };
 
     useEffect(() => {
 
