@@ -1,14 +1,14 @@
 import './App.css';
 import GameBoard from './Components/GameBoard/GameBoard';
+import react, { useState } from 'react';
 
 function App() {
-
+   const [gameEnd, setGameEnd] = useState(true);
 
 
    return (
       <div className="App bg-[#f8f8f8] h-screen">
-         <h1 className='text-center mx-auto pt-6 text-6xl'>Battle Ricks</h1>
-         <GameBoard />
+         <GameBoard gameEnd={gameEnd} />
       </div>
    );
 }
