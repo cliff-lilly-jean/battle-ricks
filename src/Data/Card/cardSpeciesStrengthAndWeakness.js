@@ -9,6 +9,16 @@ let bag = {
 };
 alert( bag.human ); // 5 if
 
+test ex.
+const cardStrengths = {
+  [Human]: {
+    strongerThan: ["Robot", "Animal"]
+  },
+  [Alien]: {
+    strongerThan: ["Robot", "Animal", "Human", "Humanoid"]
+  },
+}
+
 ex2.
 let type = 'human';
 let bag = {
@@ -19,45 +29,23 @@ let bag = {
 
 */
 
-const randomHitPointCalculator = (hitPoint) => {
- return Math.floor(Math.random() * hitPoint);
+
+const cardStrengths = {
+  ['Human']: {
+    strongerThan: ["Robot", "Animal"]
+  },
+  ['Alien']: {
+    strongerThan: ["Robot", "Animal", "Human", "Humanoid"]
+  },
 };
 
-
-const cardSpeciesStrengthWeakness = {
- 'Human': {
-  strongAgainst: {
-   "Animal": () => {
-    return randomHitPointCalculator(250);
-    // console.log(randomHitPointCalculator(250));
-   },
-   "Robot": () => {
-    console.log(randomHitPointCalculator(50));
-   }
+const cardWeakness = {
+  ['Human']: {
+    strongerThan: ["Robot", "Animal"]
   },
-  weakAgainst: {
-   "Disease": () => {
-    console.log(randomHitPointCalculator(-250));
-   },
-   "Humanoid": () => {
-    console.log(randomHitPointCalculator(-50));
-   },
-   "Alien": () => {
-    console.log(randomHitPointCalculator(-100));
-   },
+  ['Alien']: {
+    strongerThan: ["Robot", "Animal", "Human", "Humanoid"]
   },
-  resistantAgainst: {
-   "Poopybutthole": () => {
-    console.log(randomHitPointCalculator(0));
-   },
-  },
- },
- 'Alien': {
-  strongAgainst: ['Human', 'Disease'],
-  weakAgainst: ['Poopybutthole', 'Mythological Creature', 'Cronenberg'],
-  resistantAgainst: ['unknown']
- }
-
 };
 
-export default cardSpeciesStrengthWeakness;
+export { cardStrengths, cardWeakness };
