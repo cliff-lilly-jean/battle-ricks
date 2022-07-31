@@ -1,51 +1,69 @@
-// Todo: Finish cardSpeciesStrengthWeakness object
-/*
-#### Try computed properties in javascript to use the type ex.
 
-ex1.
-let human = prompt("Which fruit to buy?", "apple");
-let bag = {
-  [human]: 5, // the name of the property is taken from the variable fruit
+const cardStrengthsAndWeaknesses = {
+  ['Human']: [
+    {
+      strongAgainst: ["Robot", "Animal"],
+      weakAgainst: ["Alien", "Humanoid", "Mythological Creature", "Disease"],
+      resistantAgainst: ["Poopybutthole", "Cronenberg"]
+    }
+  ],
+  ['Alien']: [
+    {
+      strongAgainst: ["Alien", "Humanoid", "Mythological Creature", "Disease"],
+      weakAgainst: ["Mythological Creature"],
+      resistantAgainst: ["Disease"]
+    }
+  ],
+  ['Humanoid']: [
+    {
+      strongAgainst: ["Poopybutthole", "Human"],
+      weakAgainst: ["Alien", "Disease"],
+      resistantAgainst: ["unknown"]
+    }
+  ],
+  ['Poopybutthole']: [
+    {
+      strongAgainst: ["Disease"],
+      weakAgainst: ["Humanoid"],
+      resistantAgainst: ["unknown"]
+    }
+  ],
+  ['Mythological Creature']: [
+    {
+      strongAgainst: ["Alien", "Robot", "Cronenberg"],
+      weakAgainst: [],
+      resistantAgainst: ["unknown"]
+    }
+  ],
+  ['Animal']: [
+    {
+      strongAgainst: ["Disease"],
+      weakAgainst: ["Human", "Alien", "Humanoid",],
+      resistantAgainst: ["Animal"]
+    }
+  ],
+  ['Cronenberg']: [
+    {
+      strongAgainst: ["Disease"],
+      weakAgainst: ["Human", "Alien", "Humanoid",],
+      resistantAgainst: ["Animal"]
+    }
+  ],
+  ['Disease']: [
+    {
+      strongAgainst: ["Human", "Humanoid"],
+      weakAgainst: ["Alien"],
+      resistantAgainst: ["Animal"]
+    }
+  ],
+  ['unknown']: [
+    {
+      strongAgainst: [],
+      weakAgainst: [],
+      resistantAgainst: []
+    }
+  ],
 };
-alert( bag.human ); // 5 if
-
-test ex.
-const cardStrengths = {
-  [Human]: {
-    strongerThan: ["Robot", "Animal"]
-  },
-  [Alien]: {
-    strongerThan: ["Robot", "Animal", "Human", "Humanoid"]
-  },
-}
-
-ex2.
-let type = 'human';
-let bag = {
-  [human + '-']: 5 // bag.human- = 5
-};
-
-['Disease', 'Humanoid', 'Alien'],
-
-*/
 
 
-const cardStrengths = {
-  ['Human']: {
-    strongerThan: ["Robot", "Animal"]
-  },
-  ['Alien']: {
-    strongerThan: ["Robot", "Animal", "Human", "Humanoid"]
-  },
-};
-
-const cardWeakness = {
-  ['Human']: {
-    strongerThan: ["Robot", "Animal"]
-  },
-  ['Alien']: {
-    strongerThan: ["Robot", "Animal", "Human", "Humanoid"]
-  },
-};
-
-export { cardStrengths, cardWeakness };
+export default cardStrengthsAndWeaknesses;
