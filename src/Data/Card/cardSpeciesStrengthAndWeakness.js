@@ -1,8 +1,3 @@
-const randomHitPointCalculator = (hitPoint) => {
-    return Math.floor(Math.random() * hitPoint);
-};
-
-
 // Todo: Finish cardSpeciesStrengthWeakness object
 /*
 #### Try computed properties in javascript to use the type ex.
@@ -24,38 +19,44 @@ let bag = {
 
 */
 
+const randomHitPointCalculator = (hitPoint) => {
+ return Math.floor(Math.random() * hitPoint);
+};
+
+
 const cardSpeciesStrengthWeakness = {
-    'Human': {
-        strongAgainst: {
-            "Animal": () => {
-                console.log(randomHitPointCalculator(500));
-            },
-            "Robot": () => {
-                console.log(randomHitPointCalculator(100));
-            }
-        },
-        weakAgainst: {
-            "Disease": () => {
-                console.log(randomHitPointCalculator(-1000));
-            },
-            "Humanoid": () => {
-                console.log(randomHitPointCalculator(-250));
-            },
-            "Alien": () => {
-                console.log(randomHitPointCalculator(-500));
-            },
-        },
-        resistantAgainst: {
-            "Poopybutthole": () => {
-                console.log(randomHitPointCalculator(0));
-            },
-        },
-    },
-    'Alien': {
-        strongAgainst: ['Human', 'Disease'],
-        weakAgainst: ['Poopybutthole', 'Mythological Creature', 'Cronenberg'],
-        resistantAgainst: ['unknown']
-    }
+ 'Human': {
+  strongAgainst: {
+   "Animal": () => {
+    return randomHitPointCalculator(250);
+    // console.log(randomHitPointCalculator(250));
+   },
+   "Robot": () => {
+    console.log(randomHitPointCalculator(50));
+   }
+  },
+  weakAgainst: {
+   "Disease": () => {
+    console.log(randomHitPointCalculator(-250));
+   },
+   "Humanoid": () => {
+    console.log(randomHitPointCalculator(-50));
+   },
+   "Alien": () => {
+    console.log(randomHitPointCalculator(-100));
+   },
+  },
+  resistantAgainst: {
+   "Poopybutthole": () => {
+    console.log(randomHitPointCalculator(0));
+   },
+  },
+ },
+ 'Alien': {
+  strongAgainst: ['Human', 'Disease'],
+  weakAgainst: ['Poopybutthole', 'Mythological Creature', 'Cronenberg'],
+  resistantAgainst: ['unknown']
+ }
 
 };
 
