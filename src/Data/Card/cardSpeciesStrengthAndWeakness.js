@@ -63,6 +63,13 @@ const cardStrengthsAndWeaknesses = {
       resistantAgainst: []
     }
   ],
+  ['Robot']: [
+    {
+      strongAgainst: [],
+      weakAgainst: ["Human"],
+      resistantAgainst: ["Disease"],
+    }
+  ],
 };
 
 

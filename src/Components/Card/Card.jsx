@@ -28,7 +28,7 @@ const Card = ({ cardName, cardSpecies, cardAttackPoints, cardDefensePoints, card
       {/* Card Actions */}
       <button onClick={() => setChangeCardFaceDownPosition(!changeCardFaceDownPosition)} style={{ margin: "1rem auto", display: "block", background: "teal", padding: ".5rem 1.5rem", color: "white" }}>Change Face Position</button>
       <button onClick={() => setChangeCardAttackPosition(!changeCardAttackPosition)} style={{ margin: "1rem auto", display: "block", background: "olive", padding: ".5rem 1.5rem", color: "white" }}>Change Attack Position</button>
-      <button onClick={() => console.log(`Card attack: ${cardAttackPoints} \nCard attack  with bonus: ${attack(cardSpecies, cardAttackPoints, "Animal", cardStrengthsAndWeaknesses)}`)} style={{ margin: "1rem auto", display: "block", background: "olive", padding: ".5rem 1.5rem", color: "white" }}>Attack</button>
+      <button onClick={() => console.log(`Card attack: ${attack(cardSpecies, cardAttackPoints, "Human", changeCardFaceDownPosition, changeCardAttackPosition, cardStrengthsAndWeaknesses)}`)} style={{ margin: "1rem auto", display: "block", background: "navy", padding: ".5rem 1.5rem", color: "white" }}>Attack</button>
       {/*
 
       TODO: Create attack functionality
