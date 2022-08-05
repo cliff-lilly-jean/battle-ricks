@@ -24,7 +24,7 @@ const Side = ({ typeOfPlayer, typeOfDeck, typeOfHand }) => {
 
 
   return (
-    <div className=" my-5">
+    <div className="side">
       <Player player={typeOfPlayer} playerDeck={typeOfDeck} playerHand={typeOfHand} />
       {/* Phase Testing button */}
       <button onClick={() => setPhase(newPhase)} style={{ margin: "1rem auto", display: "block", background: "teal", padding: ".5rem 1.5rem", color: "white" }}>set phase</button>

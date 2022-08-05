@@ -3,6 +3,7 @@ import Side from '../Side/Side';
 import cpuUserNames from '../../Data/cpu-player-names-list.json';
 import characters from "../../Data/rick-and-morty-characters.json";
 import divideDeckInHalf from '../../Functions/Field/divideDeckInHalf';
+import "./Field.scss";
 
 const Field = ({ startTheGame, turn }) => {
 
@@ -64,12 +65,14 @@ const Field = ({ startTheGame, turn }) => {
 
 
     return (
-        <div>
-            {console.log(turn)}
-            <Side typeOfPlayer={userPlayer} typeOfDeck={userDeck} typeOfHand={userHand} />
-            <Side typeOfPlayer={aiPlayer} typeOfDeck={aiDeck} typeOfHand={aiHand} />
+        <div className='field'>
+            <div className="field-top">
+                <Side typeOfPlayer={aiPlayer} typeOfDeck={aiDeck} typeOfHand={aiHand} />
+            </div>
+            <div className="field-bottom">
+                <Side typeOfPlayer={userPlayer} typeOfDeck={userDeck} typeOfHand={userHand} />
+            </div>
             {/* {console.log("GameDeck: ", gameDeck, "\n\nUser: ", userPlayer, "\nUser Deck: ", userDeck, "\nUser hand: ", userHand, "\n\nAI: ", aiPlayer, "\nAI deck: ", aiDeck, "\nAI hand: ", aiHand)} */}
-
         </div>
     );
 };
