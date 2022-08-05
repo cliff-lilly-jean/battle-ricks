@@ -4,9 +4,10 @@ import cpuUserNames from '../../Data/cpu-player-names-list.json';
 import characters from "../../Data/rick-and-morty-characters.json";
 import divideDeckInHalf from '../../Functions/Field/divideDeckInHalf';
 
-const Field = ({ startTheGame }) => {
+const Field = ({ startTheGame, turn }) => {
 
     const [gameDeck, setGameDeck] = useState(characters);
+
 
     // User
     const [userPlayer, setUserPlayer] = useState([]);
@@ -21,7 +22,7 @@ const Field = ({ startTheGame }) => {
 
     const randomCharacterNumberForCpu = Math.floor(Math.random() * 4900);
     const amountToRemoveForDeck = 5;
-    const amountToRemoveForHand = 2;
+    // const amountToRemoveForHand = 2;
 
 
 
@@ -45,25 +46,26 @@ const Field = ({ startTheGame }) => {
 
 
         // HANDS
-        let newPlayerHand = divideDeckInHalf(newUserDeck, amountToRemoveForHand);
-        let newAiHand = divideDeckInHalf(newAiDeck, amountToRemoveForHand);
+        // let newPlayerHand = divideDeckInHalf(newUserDeck, amountToRemoveForHand);
+        // let newAiHand = divideDeckInHalf(newAiDeck, amountToRemoveForHand);
 
 
         setUserDeck(newUserDeck);
         setAiDeck(newAiDeck);
 
 
-        setUserHand(newPlayerHand);
-        setAiHand(newAiHand);
+        // setUserHand(newPlayerHand);
+        // setAiHand(newAiHand);
 
         setUserPlayer(user);
         setAiPlayer(cpu);
+
     }, []);
 
 
     return (
         <div>
-
+            {console.log(turn)}
             <Side typeOfPlayer={userPlayer} typeOfDeck={userDeck} typeOfHand={userHand} />
             <Side typeOfPlayer={aiPlayer} typeOfDeck={aiDeck} typeOfHand={aiHand} />
             {/* {console.log("GameDeck: ", gameDeck, "\n\nUser: ", userPlayer, "\nUser Deck: ", userDeck, "\nUser hand: ", userHand, "\n\nAI: ", aiPlayer, "\nAI deck: ", aiDeck, "\nAI hand: ", aiHand)} */}

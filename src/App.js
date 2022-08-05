@@ -7,7 +7,7 @@ function App() {
 
 
    return (
-      <div className="App bg-[#f8f8f8] h-screen">
+      <div className="App bg-[#f8f8f8]" style={{ minHeight: "100vh", height: "100%", width: "100%" }}>
          <GameBoard gameEnd={gameEnd} />
       </div>
    );
