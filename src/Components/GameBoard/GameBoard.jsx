@@ -17,7 +17,7 @@ const GameBoard = () => {
     }, [turn, gameOver]);
 
     return (
-        <div>
+        <div className='gameboard'>
             {/* If gameOver is still true, hide the Field, else, show the Field and set the initial turn */}
             {/* {console.log(turn, gameOver)} */}
             {gameOver === false ? <Field turn={turn} /> : null}
