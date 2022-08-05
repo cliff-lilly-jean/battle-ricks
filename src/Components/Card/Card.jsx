@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import cardSpeciesColors from '../../Data/Card/cardSpeciesColors';
 import cardStrengthsAndWeaknesses from '../../Data/Card/cardSpeciesStrengthAndWeakness';
 import attack from '../../Functions/Card/attack';
+import "./Card.scss";
 
 
 const Card = ({ cardName, cardSpecies, cardAttackPoints, cardDefensePoints, cardHealthStatus, cardGenderIcon, cardImage, cardHomeLocation, cardFaceDownPosition, cardAttackPosition }) => {
@@ -15,26 +16,31 @@ const Card = ({ cardName, cardSpecies, cardAttackPoints, cardDefensePoints, card
 
 
   return (
-    <div className='findCard-card ml-8' style={{ background: cardSpeciesColors[cardSpecies], padding: "1rem 1.5rem", maxWidth: "10000px", margin: "0 auto" }}>
-      <div className="cardContent" style={{}}>
-        <p>{`Name: ${cardName}`}</p>
-        <p>{`Image:`} {cardImage}</p>
-        <p>{`Species: ${cardSpecies}`}</p>
-        <p>{`Attack: ${cardAttackPoints}`}</p>
-        <p>{`Defense: ${cardDefensePoints}`}</p>
-        <p>{`Status: ${cardHealthStatus}`}</p>
-        <p>{`Gender:`} {cardGenderIcon}</p>
-        <p>{`Home: ${cardHomeLocation}`}</p>
-        <p>{`Face: ${changeCardFaceDownPosition ? "Face Down" : "Face Up"}`} </p>
-        <p>{`Position: ${changeCardAttackPosition ? "Attack Position" : "Defense Position"}`}</p>
-        { }
-      </div>
+    <div className="card-wrapper">
+      <div className='card' style={{ background: cardSpeciesColors[cardSpecies] }}>
+        <div className="front"></div>
+        <div className="back">
+          <div className="card-content">
+            <p>{cardName}</p>
+            <div className='card-image'>{cardImage}</div>
+            <p>{cardSpecies}</p>
+            <p>{`Attack: ${cardAttackPoints}`}</p>
+            <p>{`Defense: ${cardDefensePoints}`}</p>
+            <p>{cardHealthStatus}</p>
+            <div className='card-image'>{cardGenderIcon}</div>
+            <p>{cardHomeLocation}</p>
+            {/* TODO: these are states and don't need to be shown on the card */}
+            {/* <p>{`Face: ${changeCardFaceDownPosition ? "Face Down" : "Face Up"}`} </p>
+          <p>{`Position: ${changeCardAttackPosition ? "Attack Position" : "Defense Position"}`}</p> */}
+          </div>
+        </div>
 
-      {/* Card Actions */}
-      <button onClick={() => setChangeCardFaceDownPosition(!changeCardFaceDownPosition)} style={{ margin: "1rem auto", display: "block", background: "teal", padding: ".5rem 1.5rem", color: "white" }}>Change Face Position</button>
-      <button onClick={() => setChangeCardAttackPosition(!changeCardAttackPosition)} style={{ margin: "1rem auto", display: "block", background: "olive", padding: ".5rem 1.5rem", color: "white" }}>Change Attack Position</button>
-      <button onClick={() => console.log(`Card attack: ${attack(cardSpecies, cardAttackPoints, "Human", changeCardFaceDownPosition, changeCardAttackPosition, cardDefensePoints, cardStrengthsAndWeaknesses)}`)} style={{ margin: "1rem auto", display: "block", background: "navy", padding: ".5rem 1.5rem", color: "white" }}>Attack</button>
-      {/*
+
+        {/* Card Actions */}
+        {/* <button onClick={() => setChangeCardFaceDownPosition(!changeCardFaceDownPosition)} style={{ margin: "1rem auto", display: "block", background: "teal", padding: ".5rem 1.5rem", color: "white" }}>Change Face Position</button>
+        <button onClick={() => setChangeCardAttackPosition(!changeCardAttackPosition)} style={{ margin: "1rem auto", display: "block", background: "olive", padding: ".5rem 1.5rem", color: "white" }}>Change Attack Position</button>
+        <button onClick={() => console.log(`Card attack: ${attack(cardSpecies, cardAttackPoints, "Human", changeCardFaceDownPosition, changeCardAttackPosition, cardDefensePoints, cardStrengthsAndWeaknesses)}`)} style={{ margin: "1rem auto", display: "block", background: "navy", padding: ".5rem 1.5rem", color: "white" }}>Attack</button> */}
+        {/*
 
       TODO: Create attack functionality
 
@@ -53,7 +59,8 @@ const Card = ({ cardName, cardSpecies, cardAttackPoints, cardDefensePoints, card
 
 
       */}
-    </div >
+      </div>
+    </div>
   );
 };
 
