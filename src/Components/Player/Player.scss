@@ -32,5 +32,11 @@
         margin: 1rem auto;
         background: #ddc1ac;
         padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+
+        .hand-card-slot {
+            border: 1px solid #eee;
+        }
     }
 }
