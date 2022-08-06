@@ -9,6 +9,8 @@ const Side = ({ typeOfPlayer, typeOfDeck, typeOfHand }) => {
 
   const [phase, setPhase] = useState('');
 
+  const [lp, setLp] = useState(8000);
+
 
   let newPhase = gamePhase.attackPhase;
 
@@ -25,9 +27,9 @@ const Side = ({ typeOfPlayer, typeOfDeck, typeOfHand }) => {
 
   return (
     <div className="side">
-      <Player player={typeOfPlayer} playerDeck={typeOfDeck} playerHand={typeOfHand} />
+      <Player player={typeOfPlayer} playerDeck={typeOfDeck} playerHand={typeOfHand} playerLp={lp} />
       {/* Phase Testing button */}
-      <button onClick={() => setPhase(newPhase)} style={{ margin: "1rem auto", display: "block", background: "teal", padding: ".5rem 1.5rem", color: "white" }}>set phase</button>
+      {/* <button onClick={() => setPhase(newPhase)} style={{ margin: "1rem auto", display: "block", background: "teal", padding: ".5rem 1.5rem", color: "white" }}>set phase</button> */}
     </div>
   );
 };
