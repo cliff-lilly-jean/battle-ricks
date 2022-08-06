@@ -1,0 +1,36 @@
+.player {
+
+
+    .player-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+        margin: 0 auto;
+        border: 1px solid teal;
+
+        .deck {
+            // grid-column: 3/4;
+        }
+
+        .field {
+            grid-column: 2/3;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+
+            .field-card-slot {
+                border: 1px solid #eee;
+
+            }
+        }
+
+        .graveyard {
+            // grid-column: 1/2;
+        }
+    }
+
+    .hand {
+        width: 100%;
+        margin: 1rem auto;
+        background: #ddc1ac;
+        padding: 2rem;
+    }
+}

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Cards from '../Cards/Cards';
+import Card from '../Card/Card';
 
 const Deck = ({ typeOfDeck }) => {
 
@@ -8,7 +9,7 @@ const Deck = ({ typeOfDeck }) => {
         <div>
             <div className='cards' style={{ display: "flex", justifyContent: "space-evenly", maxWidth: "1400px", margin: "1rem auto" }}>
                 {typeOfDeck.length}
-                {/* <Cards generateCards={typeOfDeck} /> */}
+                <Card className="single-card" generateCards={typeOfDeck} />
             </div>
         </div>
 

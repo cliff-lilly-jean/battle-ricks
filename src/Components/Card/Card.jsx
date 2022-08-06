@@ -17,7 +17,7 @@ const Card = ({ cardName, cardSpecies, cardAttackPoints, cardDefensePoints, card
 
   return (
     <div className="card-wrapper">
-      <div className='card' style={{ background: cardSpeciesColors[cardSpecies] }}>
+      <div className='card single-card' style={{ background: cardSpeciesColors[cardSpecies] }}>
         <div className="front"></div>
         <div className="back">
           <div className="card-content">
