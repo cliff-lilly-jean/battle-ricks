@@ -32,29 +32,33 @@ const Player = ({ player, playerDeck, playerHand, playerLp }) => {
          {/* {console.log(player, playerDeck, playerHand)} */}
          <div className="player-wrapper">
 
-            <div>
+            <div className='graveyard'>
                <span className="font-bold">Graveyard:</span>
                <Deck typeOfDeck={graveYard} />
             </div>
 
             <div className='field'>
-               <span className="font-bold">Field:</span>
-               <Deck typeOfDeck={fieldCards} />
-               <div className='field-card-slot'>a</div>
-               <div className='field-card-slot'>b</div>
-               <div className='field-card-slot'>c</div>
-               <div className='field-card-slot'>d</div>
-               <div className='field-card-slot'>e</div>
+               {/* <span className="font-bold">Field:</span>
+               <Deck typeOfDeck={fieldCards} /> */}
+               <div className='field-card-slot'>1</div>
+               <div className='field-card-slot'>2</div>
+               <div className='field-card-slot'>3</div>
+               <div className='field-card-slot'>4</div>
+               <div className='field-card-slot'>5</div>
             </div>
             <div className='deck'>
                <span className="font-bold">Deck:</span>
                <Deck typeOfDeck={deck} />
             </div>
          </div>
-
          <div className='hand'>
-            <span className="font-bold">Hand:</span>
-            <Deck typeOfDeck={hand} />
+            <div className='hand-card-slot'>1</div>
+            <div className='hand-card-slot'>2</div>
+            <div className='hand-card-slot'>3</div>
+            <div className='hand-card-slot'>4</div>
+            <div className='hand-card-slot'>5</div>
+            {/* <span className="font-bold">Hand:</span>
+            <Deck typeOfDeck={hand} /> */}
          </div>
       </div>
    );
