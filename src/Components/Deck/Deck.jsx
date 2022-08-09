@@ -1,15 +1,24 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Cards from '../Cards/Cards';
-import Card from '../Card/Card';
+import './Deck.scss';
+import createADeck from '../../Functions/Deck/createADeck';
 
-const Deck = ({ typeOfDeck }) => {
+
+const Deck = ({ deckCards }) => {
+
+    const [cards, setCards] = useState([]);
+
+
+    useEffect(() => {
+        setCards(createADeck(deckCards, Deck));
+    }, []);
 
     return (
         <div>
-            <div className='cards' style={{ display: "flex", justifyContent: "space-evenly", maxWidth: "1400px", margin: "1rem auto" }}>
-                {typeOfDeck.length}
-                <Card className="single-card" generateCards={typeOfDeck} />
+            <div className='deck'>
+                {/* {console.log(deckCards)} */}
+                {/* <Cards generateCards={typeOfDeck} /> */}
             </div>
         </div>
 

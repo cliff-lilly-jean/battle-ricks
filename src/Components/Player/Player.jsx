@@ -18,47 +18,42 @@ const Player = ({ player, playerDeck, playerHand, playerLp }) => {
 
 
    useEffect(() => {
-      let decks = playerDeck;
-      let hands = playerHand;
 
-      setDeck(decks);
-      setHand(hands);
+      const handCards = ["cold", "hot", "big", "warm", "mild"];
+      const fieldDeckCards = [["cold", "hot", "big", "warm", "mild"]];
+      // let decks = playerDeck;
+      // let hands = playerHand;
 
-   }, [deck, hand]);
+      setDeck(playerDeck);
+
+
+   }, [deck, hand, graveYard, fieldCards]);
 
 
    return (
+
       <div className='player'>
-         {/* {console.log(player, playerDeck, playerHand)} */}
          <div className="player-wrapper">
-
+            {/* Graveyard */}
             <div className='graveyard'>
-               <span className="font-bold">Graveyard:</span>
-               <Deck typeOfDeck={graveYard} />
+               <span className='cards-in-deck'>{graveYard.length}</span>
+               <Deck deckCards={graveYard} />
+               {/* {console.log(playerDeck)} */}
             </div>
-
+            {/* Field */}
             <div className='field'>
-               {/* <span className="font-bold">Field:</span>
-               <Deck typeOfDeck={fieldCards} /> */}
-               <div className='field-card-slot'>1</div>
-               <div className='field-card-slot'>2</div>
-               <div className='field-card-slot'>3</div>
-               <div className='field-card-slot'>4</div>
-               <div className='field-card-slot'>5</div>
+               <Deck deckCards={fieldCards} />
             </div>
+            {/* Deck */}
             <div className='deck'>
-               <span className="font-bold">Deck:</span>
-               <Deck typeOfDeck={deck} />
+               <span className='cards-in-deck'>{deck.length}</span>
+               <Deck deckCards={deck} />
             </div>
          </div>
+         {/* Hand */}
          <div className='hand'>
-            <div className='hand-card-slot'>1</div>
-            <div className='hand-card-slot'>2</div>
-            <div className='hand-card-slot'>3</div>
-            <div className='hand-card-slot'>4</div>
-            <div className='hand-card-slot'>5</div>
-            {/* <span className="font-bold">Hand:</span>
-            <Deck typeOfDeck={hand} /> */}
+            {/* <span className='cards-in-deck'>{hand.length}</span> */}
+            <Deck deckCards={hand} />
          </div>
       </div>
    );
