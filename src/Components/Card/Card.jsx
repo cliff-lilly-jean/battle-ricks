@@ -5,14 +5,35 @@ import attack from '../../Functions/Card/attack';
 import "./Card.scss";
 
 
-const Card = ({ cardName, cardSpecies, cardAttackPoints, cardDefensePoints, cardHealthStatus, cardGenderIcon, cardImage, cardHomeLocation, cardFaceDownPosition, cardAttackPosition }) => {
+const Card = ({ cardName, cardSpecies, cardAttackPoints, cardDefensePoints, cardStatus, cardIcon, cardImage, cardHome, cardFaceDownPosition, cardAttackPosition }) => {
 
-  const [changeCardFaceDownPosition, setChangeCardFaceDownPosition] = useState(cardFaceDownPosition);
+  const [name, setName] = useState('');
+  const [species, setSpecies] = useState('');
+  const [attackPoints, setAttackPoints] = useState('');
+  const [defensePoints, setDefensePoints] = useState('');
+  const [healthPoints, setHealthPoints] = useState('');
+  const [icon, setIcon] = useState('');
+  const [image, setImage] = useState('');
+  const [origin, setOrigin] = useState('');
+  const [facePosition, setFacePosition] = useState({
+    positions: {
+      "faceDown": true,
+      "faceUp": false
+    }
+  });
+  const [attackPosition, setAttackPosition] = useState({
+    positions: {
+      "defenseMode": true,
+      "attackMode": false
+    }
+  });
 
-  // If a card is in attack position and hasAttacked === false; Add it to a canAttack array;
-  // Allow the player to select only from the canAttack array to attack 
-  const [changeCardAttackPosition, setChangeCardAttackPosition] = useState(cardAttackPosition);
-  const [hasAttacked, setHasAttacked] = useState(false);
+  // const [changeCardFaceDownPosition, setChangeCardFaceDownPosition] = useState(cardFaceDownPosition);
+
+  // // If a card is in attack position and hasAttacked === false; Add it to a canAttack array;
+  // // Allow the player to select only from the canAttack array to attack 
+  // const [changeCardAttackPosition, setChangeCardAttackPosition] = useState(cardAttackPosition);
+  // const [hasAttacked, setHasAttacked] = useState(false);
 
 
   return (
@@ -26,9 +47,9 @@ const Card = ({ cardName, cardSpecies, cardAttackPoints, cardDefensePoints, card
             <p>{cardSpecies}</p>
             <p>{`Attack: ${cardAttackPoints}`}</p>
             <p>{`Defense: ${cardDefensePoints}`}</p>
-            <p>{cardHealthStatus}</p>
-            <div className='card-image'>{cardGenderIcon}</div>
-            <p>{cardHomeLocation}</p>
+            <p>{cardStatus}</p>
+            <div className='card-image'>{cardIcon}</div>
+            <p>{cardHome}</p>
             {/* TODO: these are states and don't need to be shown on the card */}
             {/* <p>{`Face: ${changeCardFaceDownPosition ? "Face Down" : "Face Up"}`} </p>
           <p>{`Position: ${changeCardAttackPosition ? "Attack Position" : "Defense Position"}`}</p> */}
