@@ -20,14 +20,17 @@ const Player = ({ player, playerDeck, playerHand, playerLp }) => {
    useEffect(() => {
 
       const handCards = ["cold", "hot", "big", "warm", "mild"];
-      const fieldDeckCards = [["cold", "hot", "big", "warm", "mild"]];
-      // let decks = playerDeck;
-      // let hands = playerHand;
+      const fieldDeckCards = ["big", "warm", "mild"];
+      const graveYardCards = ["hot", "big", "warm", "mild"];
+
 
       setDeck(playerDeck);
+      setHand(handCards);
+      setFieldCards(fieldDeckCards);
+      setGraveYard(graveYardCards);
 
 
-   }, [deck, hand, graveYard, fieldCards]);
+   }, [deck, setHand, setGraveYard, setFieldCards]);
 
 
    return (
@@ -42,6 +45,7 @@ const Player = ({ player, playerDeck, playerHand, playerLp }) => {
             </div>
             {/* Field */}
             <div className='field'>
+               <span className='cards-in-deck'>{fieldCards.length}</span>
                <Deck deckCards={fieldCards} />
             </div>
             {/* Deck */}
@@ -53,6 +57,7 @@ const Player = ({ player, playerDeck, playerHand, playerLp }) => {
          {/* Hand */}
          <div className='hand'>
             {/* <span className='cards-in-deck'>{hand.length}</span> */}
+            <span className='cards-in-deck'>{hand.length}</span>
             <Deck deckCards={hand} />
          </div>
       </div>

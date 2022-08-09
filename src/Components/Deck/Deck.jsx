@@ -1,24 +1,27 @@
 
 import React, { useEffect, useState } from 'react';
-import Cards from '../Cards/Cards';
+// import Card from '../Card/Card';
 import './Deck.scss';
-import createADeck from '../../Functions/Deck/createADeck';
+import { createADeck, Card } from '../../Functions/Deck/createADeck';
+import cardGenderIcons from '../../Data/Card/cardGenderIcons';
 
 
 const Deck = ({ deckCards }) => {
 
     const [cards, setCards] = useState([]);
 
+    let newCard = createADeck(deckCards);
 
     useEffect(() => {
-        setCards(createADeck(deckCards, Deck));
-    }, []);
+
+    }, [cards]);
 
     return (
         <div>
             <div className='deck'>
-                {/* {console.log(deckCards)} */}
-                {/* <Cards generateCards={typeOfDeck} /> */}
+                <button onClick={() => setCards(createADeck(deckCards))}>Button</button>
+                {/* <Card /> */}
+                {console.log(newCard)}
             </div>
         </div>
 
