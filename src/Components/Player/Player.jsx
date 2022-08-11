@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Deck from '../Deck/Deck';
 import './Player.scss';
 
-const Player = ({ player, playerDeck, playerHand, playerLp }) => {
+const Player = ({ player, playerDeck, playerHand, playerField, playerGraveyard, playerLp }) => {
 
    // The deck is an array of Card Components
    const [deck, setDeck] = useState([]);
@@ -19,23 +19,24 @@ const Player = ({ player, playerDeck, playerHand, playerLp }) => {
 
    useEffect(() => {
 
-      const handCards = ["cold", "hot", "big", "warm", "mild"];
-      const fieldDeckCards = ["big", "warm", "mild"];
-      const graveYardCards = ["hot", "big", "warm", "mild"];
+      const handCards = [["hand", "cards", "in", "the", "deck"]];
+      const fieldDeckCards = [["field", "cards", "deck"]];
+      const graveYardCards = [["graveyard", "cards", "in", "deck"]];
 
 
       setDeck(playerDeck);
-      setHand(handCards);
-      setFieldCards(fieldDeckCards);
-      setGraveYard(graveYardCards);
+      setHand(playerHand);
+      setFieldCards(playerField);
+      setGraveYard(playerGraveyard);
 
 
-   }, [deck, setHand, setGraveYard, setFieldCards]);
+   }, [deck, hand, graveYard, fieldCards]);
 
 
    return (
 
       <div className='player'>
+         {player.name}
          <div className="player-wrapper">
             {/* Graveyard */}
             <div className='graveyard'>

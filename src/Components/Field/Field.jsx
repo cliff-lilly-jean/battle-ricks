@@ -13,12 +13,17 @@ const Field = ({ startTheGame, turn }) => {
     // User
     const [userPlayer, setUserPlayer] = useState([]);
     const [userDeck, setUserDeck] = useState([]);
-    const [userHand, setUserHand] = useState([]);
+    const [userHand, setUserHand] = useState(["user", "hand", "cards", "in", "the", "deck"]);
+    const [userField, setUserField] = useState(["user", "field", "cards", "deck"]);
+    const [userGraveyard, setUserGraveyard] = useState(["user", "graveyard", "cards", "in", "deck"]);
+
 
     // AI
     const [aiPlayer, setAiPlayer] = useState([]);
     const [aiDeck, setAiDeck] = useState([]);
-    const [aiHand, setAiHand] = useState([]);
+    const [aiHand, setAiHand] = useState(["ai", "hand", "cards", "in", "the", "deck"]);
+    const [aiField, setAiField] = useState(["ai", "field", "cards", "deck"]);
+    const [aiGraveyard, setAiGraveyard] = useState(["ai", "graveyard", "cards", "in", "deck"]);
 
 
     const randomCharacterNumberForCpu = Math.floor(Math.random() * 4900);
@@ -67,10 +72,10 @@ const Field = ({ startTheGame, turn }) => {
     return (
         <div className='field'>
             <div className="field-top">
-                <Side typeOfPlayer={aiPlayer} typeOfDeck={aiDeck} typeOfHand={aiHand} />
+                <Side typeOfPlayer={aiPlayer} typeOfDeck={aiDeck} typeOfHand={aiHand} typeOfField={userField} typeOfGraveyard={userGraveyard} />
             </div>
             <div className="field-bottom">
-                <Side typeOfPlayer={userPlayer} typeOfDeck={userDeck} typeOfHand={userHand} />
+                <Side typeOfPlayer={userPlayer} typeOfDeck={userDeck} typeOfHand={userHand} typeOfField={aiField} typeOfGraveyard={aiGraveyard} />
             </div>
             {/* {console.log("GameDeck: ", gameDeck, "\n\nUser: ", userPlayer, "\nUser Deck: ", userDeck, "\nUser hand: ", userHand, "\n\nAI: ", aiPlayer, "\nAI deck: ", aiDeck, "\nAI hand: ", aiHand)} */}
         </div>
