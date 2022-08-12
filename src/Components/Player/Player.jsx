@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Deck from '../Deck/Deck';
+import Card from '../Card/Card';
 import './Player.scss';
+import cardGenderIcons from '../../Data/Card/cardGenderIcons';
 
 const Player = ({ player, playerDeck, playerHand, playerField, playerGraveyard, playerLp }) => {
 
@@ -19,7 +21,7 @@ const Player = ({ player, playerDeck, playerHand, playerField, playerGraveyard, 
 
    useEffect(() => {
 
-      const handCards = [["hand", "cards", "in", "the", "deck"]];
+      const handCards = [{ "face": "good" }, { "face": "left" }, { "face": "right" }, { "face": "a" }, { "face": "c" },];
       const fieldDeckCards = [["field", "cards", "deck"]];
       const graveYardCards = [["graveyard", "cards", "in", "deck"]];
 
@@ -36,7 +38,7 @@ const Player = ({ player, playerDeck, playerHand, playerField, playerGraveyard, 
    return (
 
       <div className='player'>
-         {player.name}
+         {`${player.name}  ${playerLp}`}
          <div className="player-wrapper">
             {/* Graveyard */}
             <div className='graveyard'>
@@ -46,22 +48,24 @@ const Player = ({ player, playerDeck, playerHand, playerField, playerGraveyard, 
             </div>
             {/* Field */}
             <div className='field'>
-               <span className='cards-in-deck'>{fieldCards.length}</span>
-               <Deck deckCards={fieldCards} />
+               {hand.map((card, index) => {
+                  return <Deck key={index} deckCards={fieldCards} />;
+               })}
             </div>
             {/* Deck */}
             <div className='deck'>
                <span className='cards-in-deck'>{deck.length}</span>
                <Deck deckCards={deck} />
+               {/*  */}
             </div>
          </div>
          {/* Hand */}
          <div className='hand'>
-            {/* <span className='cards-in-deck'>{hand.length}</span> */}
-            <span className='cards-in-deck'>{hand.length}</span>
-            <Deck deckCards={hand} />
+            {hand.map((card, index) => {
+               return <Deck key={index} deckCards={hand} />;
+            })}
          </div>
-      </div>
+      </div >
    );
 };
 
