@@ -15,4 +15,9 @@
         margin-top: 2rem;
         border-top: 10px solid rgb(238, 103, 103);
     }
+
+    .field-top {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
 }

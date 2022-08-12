@@ -48,6 +48,7 @@ const Player = ({ player, playerDeck, playerHand, playerField, playerGraveyard, 
             </div>
             {/* Field */}
             <div className='field'>
+
                {hand.map((card, index) => {
                   return <Deck key={index} deckCards={fieldCards} />;
                })}
