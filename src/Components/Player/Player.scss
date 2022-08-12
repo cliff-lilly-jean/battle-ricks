@@ -29,12 +29,14 @@
     }
 
     .hand {
+        max-width: 550px;
         width: 100%;
-        margin: 1rem auto;
-        background: #ddc1ac;
+        margin: 5rem auto;
+        // background: #ddc1ac;
         padding: 2rem;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
+        grid-gap: 1rem;
 
         .hand-card-slot {
             border: 1px solid #eee;
