@@ -38,24 +38,23 @@ const Player = ({ player, playerDeck, playerHand, playerField, playerGraveyard, 
    return (
 
       <div className='player'>
-         {`${player.name}  ${playerLp}`}
+         {player.type == "cpu" ? <div className='flip'>{`${player.name}  ${playerLp}`}</div> : <div>{`${player.name}  ${playerLp}`}</div>}
          <div className="player-wrapper">
             {/* Graveyard */}
             <div className='graveyard'>
-               <span className='cards-in-deck'>{graveYard.length}</span>
+               {player.type == "cpu" ? <div className='flip'>{graveYard.length}</div> : <div className='cards-in-deck'>{graveYard.length}</div>}
                <Deck deckCards={graveYard} />
                {/* {console.log(playerDeck)} */}
             </div>
             {/* Field */}
             <div className='field'>
-
                {hand.map((card, index) => {
                   return <Deck key={index} deckCards={fieldCards} />;
                })}
             </div>
             {/* Deck */}
             <div className='deck'>
-               <span className='cards-in-deck'>{deck.length}</span>
+               {player.type == "cpu" ? <div className='flip'>{deck.length}</div> : <div className='cards-in-deck'>{deck.length}</div>}
                <Deck deckCards={deck} />
                {/*  */}
             </div>
