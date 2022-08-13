@@ -7,9 +7,6 @@
         margin: 0 auto;
         border: 1px solid teal;
 
-        .deck {
-            // grid-column: 3/4;
-        }
 
         .field {
             grid-column: 2/3;
@@ -21,10 +18,6 @@
                 border: 1px solid #eee;
 
             }
-        }
-
-        .graveyard {
-            // grid-column: 1/2;
         }
     }
 
@@ -42,4 +35,9 @@
             border: 1px solid #eee;
         }
     }
+}
+
+.flip {
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
 }
