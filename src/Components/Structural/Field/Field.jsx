@@ -1,26 +1,43 @@
 import React, { useEffect, useState } from 'react';
 import Side from '../Side/Side';
-import characters from "../../Data/rick-and-morty-characters.json";
-import divideDeckInHalf from '../../Functions/Field/divideDeckInHalf';
+import characters from "../../../Data/rick-and-morty-characters";
+import divideDeckInHalf from '../../../Functions/Field/divideDeckInHalf';
 import "./Field.scss";
 
-import { user, ai } from '../../Data/determinePlayers';
-import { randomAiCharacter, amountToRemoveForDeck } from '../../Data/constants';
+import { user, ai } from '../../../Data/determinePlayers';
+import { randomAiCharacter, amountToRemoveForDeck } from '../../../Data/constants';
 
 const Field = () => {
 
-    // Game states
+    // !Properties
+    const gameDeck = characters;
+
+    // !State
     const [gameOver, setGameOver] = useState(true);
+    // Deck
+    const [deck, setDeck] = useState([]);
+    // Hand
+    // Field 
+    // GraveYard
+
+    // !Methods
+    const startGame = () => {
+        setGameOver((prevGameOverState => setGameOver(!prevGameOverState)));
+        let userDeck = createDeck();
+        let aiDeck = createDeck();
+    };
+
+    const createDeck = () => {
+        let newDeck = divideDeckInHalf(gameDeck, 5);
+        setDeck((prevDeck) => newDeck);
+        console.log(deck);
+    };
+
 
 
     useEffect(() => {
 
-    }, [gameOver]);
-
-
-
-
-    const [gameDeck, setGameDeck] = useState(characters);
+    }, [gameOver, deck]);
 
 
     // User
@@ -48,9 +65,6 @@ const Field = () => {
 
 
 
-        // DECKS
-        let newUserDeck = divideDeckInHalf(gameDeck, amountToRemoveForDeck);
-        let newAiDeck = divideDeckInHalf(gameDeck, amountToRemoveForDeck);
 
 
         // HANDS
@@ -58,8 +72,8 @@ const Field = () => {
         // let newAiHand = divideDeckInHalf(newAiDeck, amountToRemoveForHand);
 
 
-        setUserDeck(newUserDeck);
-        setAiDeck(newAiDeck);
+        // setUserDeck(newUserDeck);
+        // setAiDeck(newAiDeck);
 
 
         // setUserHand(newPlayerHand);
@@ -74,11 +88,18 @@ const Field = () => {
     return (
         <div className='field'>
             <div className="field-top">
-                <Side typeOfPlayer={aiPlayer} typeOfDeck={aiDeck} typeOfHand={aiHand} typeOfField={userField} typeOfGraveyard={userGraveyard} />
+                <Side typeOfPlayer={aiPlayer} typeOfDeck={gameDeck} typeOfHand={aiHand} typeOfField={userField} typeOfGraveyard={userGraveyard} />
             </div>
             <div className="field-bottom">
-                <Side typeOfPlayer={userPlayer} typeOfDeck={userDeck} typeOfHand={userHand} typeOfField={aiField} typeOfGraveyard={aiGraveyard} />
+                <Side typeOfPlayer={userPlayer} typeOfDeck={gameDeck} typeOfHand={userHand} typeOfField={aiField} typeOfGraveyard={aiGraveyard} />
             </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <button onClick={() => startGame()}>Start</button>
         </div>
     );
 };
