@@ -1,7 +1,7 @@
 .card-wrapper {
 
-    min-width: 80px;
-    min-height: 120px;
+    min-width: 60px;
+    min-height: 80px;
     perspective: 1500;
 
 
@@ -28,9 +28,6 @@
             height: 100%;
         }
 
-        &:hover {
-            // transform: rotateY(180deg);
-        }
 
         .front,
         .back {
