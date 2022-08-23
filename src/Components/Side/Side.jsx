@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import Player from "../Player/Player";
 
 import gamePhase from "../../Data/Side/gamePhase";
+import { lifePoints } from '../../Data/constants';
 
 const Side = ({ typeOfPlayer, typeOfDeck, typeOfHand, typeOfField, typeOfGraveyard }) => {
 
   // phases: draw, place, ..., attack
   const [phase, setPhase] = useState('');
-  const [lp, setLp] = useState(8000);
+  const [lp, setLp] = useState(lifePoints);
 
   // Set the turn and determine the winning side
   const [turn, setTurn] = useState('');
