@@ -1,7 +1,6 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import Field from '../Field/Field';
-import init from '../../Functions/Gameboard/getInit';
+import init from '../../../Functions/Gameboard/getInit';
 import './Gameboard.scss';
 
 const GameBoard = () => {
@@ -9,7 +8,6 @@ const GameBoard = () => {
     return (
         <div className='gameboard'>
             <Field />
-
         </div>
 
     );
