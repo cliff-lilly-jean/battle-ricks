@@ -1,6 +1,10 @@
 .player {
 
 
+    .player-description {
+        margin: 2rem 0;
+    }
+
     .player-wrapper {
         display: grid;
         grid-template-columns: 1fr 5fr 1fr;
@@ -24,7 +28,7 @@
     .hand {
         max-width: 550px;
         width: 100%;
-        margin: 5rem auto;
+        margin: 0rem auto;
         // background: #ddc1ac;
         padding: 2rem;
         display: grid;

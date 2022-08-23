@@ -38,7 +38,7 @@ const Player = ({ player, playerDeck, playerHand, playerField, playerGraveyard, 
    return (
 
       <div className='player'>
-         {player.type == "cpu" ? <div className='flip'>{`${player.name}  ${playerLp}`}</div> : <div>{`${player.name}  ${playerLp}`}</div>}
+         {player.type == "cpu" ? <div className='flip player-description'>{`${player.name}  ${playerLp}`}</div> : <div className='player-description'>{`${player.name}  ${playerLp}`}</div>}
          <div className="player-wrapper">
             {/* Graveyard */}
             <div className='graveyard'>
