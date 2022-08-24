@@ -1,17 +1,29 @@
 
-import React from 'react';
-import Cards from '../Cards/Cards';
+import React, { useEffect, useState } from 'react';
+import Card from '../Card/Card';
+import './Deck.scss';
 
-const Deck = ({ typeOfDeck }) => {
 
- return (
-  <div>
-   <div className='cards'>
-    <Cards generateCards={typeOfDeck} />
-   </div>
-  </div>
 
- );
+
+const Deck = ({ deckCards }) => {
+
+    const [cards, setCards] = useState([]);
+
+    // let newCard = createADeck(deckCards);
+
+    useEffect(() => {
+
+    }, [cards]);
+
+    return (
+
+        <div className='deck'>
+            {/* {console.log(deckCards)} */}
+            <Card />
+        </div>
+
+    );
 };
 
 export default Deck;

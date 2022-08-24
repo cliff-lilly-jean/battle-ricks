@@ -1,0 +1,47 @@
+.player {
+
+
+    .player-description {
+        margin: 2rem 0;
+    }
+
+    .player-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+        margin: 0 auto;
+        border: 1px solid teal;
+
+
+        .field {
+            grid-column: 2/3;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            border: 1px solid rgb(199, 199, 199);
+
+            .field-card-slot {
+                border: 1px solid #eee;
+
+            }
+        }
+    }
+
+    .hand {
+        max-width: 550px;
+        width: 100%;
+        margin: 0rem auto;
+        // background: #ddc1ac;
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 1rem;
+
+        .hand-card-slot {
+            border: 1px solid #eee;
+        }
+    }
+}
+
+.flip {
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+}

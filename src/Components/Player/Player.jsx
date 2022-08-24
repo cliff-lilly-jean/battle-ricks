@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Deck from '../Deck/Deck';
+import Card from '../Card/Card';
+import './Player.scss';
+import cardGenderIcons from '../../Data/Card/cardGenderIcons';
 
-const Player = ({ player, playerDeck, playerHand }) => {
+const Player = ({ player, playerDeck, playerHand, playerField, playerGraveyard, playerLp }) => {
 
    // The deck is an array of Card Components
    const [deck, setDeck] = useState([]);
 
    // The hand is an array of Card Components
    const [hand, setHand] = useState([]);
-
-   const [lp, setLp] = useState(8000);
 
    // The fieldCards is an array of Card Components
    const [fieldCards, setFieldCards] = useState([]);
@@ -19,25 +20,52 @@ const Player = ({ player, playerDeck, playerHand }) => {
 
 
    useEffect(() => {
-      let decks = playerDeck;
-      let hands = playerHand;
 
-      setDeck(decks);
-      setHand(hands);
+      const handCards = [{ "face": "good" }, { "face": "left" }, { "face": "right" }, { "face": "a" }, { "face": "c" },];
+      const fieldDeckCards = [["field", "cards", "deck"]];
+      const graveYardCards = [["graveyard", "cards", "in", "deck"]];
 
-   }, [deck, hand]);
+
+      setDeck(playerDeck);
+      setHand(playerHand);
+      setFieldCards(playerField);
+      setGraveYard(playerGraveyard);
+
+
+   }, [deck, hand, graveYard, fieldCards]);
 
 
    return (
-      <div>
-         {player.name}
-         {/* {console.log(player, playerDeck, playerHand)} */}
-         <p><span className="font-bold">LP:</span> {lp}</p>
-         <div><span className="font-bold">Deck:</span> <Deck typeOfDeck={deck} /></div>
-         <div><span className="font-bold">Field:</span> <Deck typeOfDeck={fieldCards} /></div>
-         <div><span className="font-bold">Hand:</span> <Deck typeOfDeck={hand} /></div>
-         <div><span className="font-bold">Graveyard:</span> <Deck typeOfDeck={graveYard} /></div>
-      </div>
+
+      <div className='player'>
+         {player.type == "cpu" ? <div className='flip player-description'>{`${player.name}  ${playerLp}`}</div> : <div className='player-description'>{`${player.name}  ${playerLp}`}</div>}
+         <div className="player-wrapper">
+            {/* Graveyard */}
+            <div className='graveyard'>
+               {player.type == "cpu" ? <div className='flip'>{graveYard.length}</div> : <div className='cards-in-deck'>{graveYard.length}</div>}
+               <Deck deckCards={graveYard} />
+               {/* {console.log(playerDeck)} */}
+            </div>
+            {/* Field */}
+            <div className='field'>
+               {hand.map((card, index) => {
+                  return <Deck key={index} deckCards={fieldCards} />;
+               })}
+            </div>
+            {/* Deck */}
+            <div className='deck'>
+               {player.type == "cpu" ? <div className='flip'>{deck.length}</div> : <div className='cards-in-deck'>{deck.length}</div>}
+               <Deck deckCards={deck} />
+               {/*  */}
+            </div>
+         </div>
+         {/* Hand */}
+         <div className='hand'>
+            {hand.map((card, index) => {
+               return <Deck key={index} deckCards={hand} />;
+            })}
+         </div>
+      </div >
    );
 };
 

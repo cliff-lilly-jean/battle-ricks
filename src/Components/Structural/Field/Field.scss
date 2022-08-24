@@ -1,0 +1,22 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .field-top,
+    .field-bottom {
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 2rem;
+        overflow: hidden;
+    }
+
+    .field-bottom {
+        border-top: 10px solid rgb(238, 103, 103);
+    }
+
+    .field-top {
+        -webkit-transform: scaleY(-1);
+        transform: scaleY(-1);
+    }
+}
